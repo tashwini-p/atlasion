@@ -1,0 +1,24 @@
+###
+
+GET https://atlasion.onrender.com/users
+
+###
+
+POST https://atlasion.onrender.com/register
+Content-Type: application/json
+
+{
+    "email":"tash@gmail.com",
+    "password":"tashwini13",
+    "username":"tash_p"
+}
+
+###
+
+POST https://atlasion.onrender.com/login
+Content-Type: application/json
+
+{
+    "email":"tash@gmail.com",
+    "password":"tashwini13"
+}
