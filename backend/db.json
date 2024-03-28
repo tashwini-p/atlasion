@@ -1,3 +1,121 @@
 {
-    "users":[]
+    "users":[
+        {
+            "email": "user1@example.com",
+            "password": "$2a$10$5Mm5/W2jOZI5Z8//sdLTlOrX6xlfw09YSjbADJulUVFPWCFHW2WX.",
+            "username": "johndoe30",
+            "firstName": "John",
+            "lastName": "Doe",
+            "age": 30,
+            "id": 1
+          },
+          {
+            "email": "sparklequeen@example.com",
+            "password": "$2a$10$nUpmRa9bmnq7KvJamXCdXOsyEBlEMbUrQ9QaJf9r9hOJzBe0GVyJC",
+            "username": "sparkleQueen",
+            "firstName": "Samantha",
+            "lastName": "Jones",
+            "age": 28,
+            "id": 2
+          },
+          {
+            "email": "gamergeek@example.com",
+            "password": "$2a$10$C6MBGrEDEVn5tBAKMXsyMeuDOlI/nREu6DAaLys85yTf9UlES89OK",
+            "username": "gamerGeek",
+            "firstName": "Adam",
+            "lastName": "Smith",
+            "age": 34,
+            "id": 3
+          },
+          {
+            "email": "musicmaestro@example.com",
+            "password": "$2a$10$fltANmQnWN4jLNAHsWTHeuLZUKELVM0YKwmTWt9xoKbYOjbi7kZde",
+            "username": "musicMaestro",
+            "firstName": "Emily",
+            "lastName": "Johnson",
+            "age": 31,
+            "id": 4
+          },
+          {
+            "email": "natureexplorer@example.com",
+            "password": "$2a$10$re2l4aLdfv1BYIj6jFIxXeJ9Ejvl5AyA933M.3gJZUBIIBDWumfly",
+            "username": "natureExplorer",
+            "firstName": "Alex",
+            "lastName": "Roberts",
+            "age": 29,
+            "id": 5
+          },
+          {
+            "email": "techsavvy@example.com",
+            "password": "$2a$10$UDsa7oxVeomK2PXHo7KCzuhp6Cl3E55HGIb5M0poc3X83kZaP2iT.",
+            "username": "techSavvy",
+            "firstName": "David",
+            "lastName": "Brown",
+            "age": 27,
+            "id": 6
+          },
+          {
+            "email": "bookworm@example.com",
+            "password": "$2a$10$qn63SdGbTQtirBJAVHtwPuILj/tJ6lLbNMIrS1X5WAiI1n68qsncS",
+            "username": "bookworm",
+            "firstName": "Sophia",
+            "lastName": "Taylor",
+            "age": 32,
+            "id": 7
+          },
+          {
+            "email": "traveler@example.com",
+            "password": "$2a$10$i0ODoR.e.xWE3IB4UF45hO3JaET1Dc.tGlMB/gvU.qRwrGUoPbAGO",
+            "username": "travelerExtraordinaire",
+            "firstName": "Olivia",
+            "lastName": "Anderson",
+            "age": 30,
+            "id": 8
+          },
+          {
+            "email": "coffeeaddict@example.com",
+            "password": "$2a$10$Xy4wjNTqOQ5LylNSnrC4Ceuw.NVbo5t05SMsIrAtmvaf6a9uWuMYm",
+            "username": "coffeeAddict",
+            "firstName": "Michael",
+            "lastName": "Davis",
+            "age": 35,
+            "id": 9
+          },
+          {
+            "email": "fitnessfanatic@example.com",
+            "password": "$2a$10$t8r/jCmyAHpxBa6fjcSRjOMjqmTfdiDObdJOsbLVTz68ntMcu4Ibu",
+            "username": "fitnessFanatic",
+            "firstName": "Ethan",
+            "lastName": "Wilson",
+            "age": 26,
+            "id": 10
+          },
+          {
+            "email": "foodieguru@example.com",
+            "password": "$2a$10$IGYaxnqXmujCImSARFjRX.dsFMMXmQGHkeT3b24/5rdRrtuuK5vOy",
+            "username": "foodieGuru",
+            "firstName": "Ava",
+            "lastName": "Martinez",
+            "age": 33,
+            "id": 11
+          },
+          {
+            "email": "artisticsoul@example.com",
+            "password": "$2a$10$0EUbn0dCRwiSQZmE.ukaxOqZKB8WQm/7rMk4Fj9B7znnxidT8I9nq",
+            "username": "artisticSoul",
+            "firstName": "Mia",
+            "lastName": "Garcia",
+            "age": 29,
+            "id": 12
+          },
+          {
+            "email": "codingninja@example.com",
+            "password": "$2a$10$FLTEvnsNvoHG1HC6BsWV5.vVvG3HGLSIBOhSWRHgdk4ZjU0yPfkYS",
+            "username": "codingNinja",
+            "firstName": "Noah",
+            "lastName": "Hernandez",
+            "age": 28,
+            "id": 13
+          }
+    ]
 }
