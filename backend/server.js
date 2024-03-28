@@ -16,5 +16,5 @@ server.use(router);
 const port = process.env.PORT || 4000;
 
 server.listen(port, () => {
-  console.log(JSON Server with authentication is running on port ${port});
+  console.log(`JSON Server with authentication is running on port ${port}`);
 });
