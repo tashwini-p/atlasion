@@ -42,7 +42,7 @@ const JiraServiceManagement: React.FC = () => {
           </Heading>
 
           <Text
-            fontSize="18px"
+            fontSize="17px"
             marginBlock="0"
             lineHeight="24px"
             color="#44546f"
