@@ -28,7 +28,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
-import logo from "../assets/WebsiteLogo.png";
+// import logo from "../assets/WebsiteLogo.png";
 
 interface NavItem {
   label: string;
@@ -74,83 +74,87 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
-export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
 
-  return (
-    <Box>
-      <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 4 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}>
-          <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }} >
-          <Img src={logo} h={"3rem"} mt={0} w={"10rem"} ml={9} />
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
-        </Flex>
-
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            rounded={'full'}
-            cursor={'pointer'}
-            minW={0}
-            px={2}
-            py={1}
-            mx={9}
-            bg={"red"}
-            color={"black"}
-            _hover={"none"}
-            _active={"none"}
+    export const Navbar: React.FC = () => {
+      const { isOpen, onToggle } = useDisclosure();
+    
+      return (
+        <Box>
+          <Flex
+            bg={useColorModeValue("white", "gray.800")}
+            color={useColorModeValue("gray.600", "white")}
+            minH={"60px"}
+            py={{ base: 4 }}
+            px={{ base: 4 }}
+            borderBottom={1}
+            borderStyle={"solid"}
+            borderColor={useColorModeValue("gray.200", "gray.900")}
+            align={"center"}
           >
-            <Text>DG</Text>
-          </MenuButton>
-          <MenuList p={0}>
-
-            <Flex bg={"#172B4D"}>
-              <Avatar mt={2} ml={2}
-                h={"2.3rem"}
-                w={"2.3rem"}
-                src={'https://avatars.dicebear.com/api/male/username.svg'}
+            <Flex
+              flex={{ base: 1, md: "auto" }}
+              ml={{ base: -2 }}
+              display={{ base: "flex", md: "none" }}
+            >
+              <IconButton
+                onClick={onToggle}
+                icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+                variant={"ghost"}
+                aria-label={"Toggle Navigation"}
               />
-              <Box ml={2} mt={2} fontSize={"0.9rem"} color={"white"}>
-                <p style={{ marginTop: "0", padding: "0px", paddingRight: "0.3rem" }}>Username</p>
-                <p style={{ marginTop: "0", padding: "0px", paddingRight: "0.3rem" }}>anujkshatriya82@gmail.com</p>
-              </Box>
             </Flex>
-            <MenuItem>Switch Account</MenuItem>
-            <MenuItem>Profile</MenuItem>
-            <MenuItem>Licenses</MenuItem>
-            <MenuItem>Logout</MenuItem>
-          </MenuList>
-        </Menu>
+            <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+              <Img src={"logo"} h={"3rem"} mt={0} w={"10rem"} ml={9} />
+              <Flex display={{ base: "none", md: "flex" }} ml={10}>
+                <DesktopNav />
+              </Flex>
+            </Flex>
+    
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                rounded={"full"}
+                cursor={"pointer"}
+                minW={0}
+                px={2}
+                py={1}
+                mx={9}
+                bg={"red"}
+                color={"black"}
+                _hover={"none"}
+                _active={"none"}
+              >
+                <Text>DG</Text>
+              </MenuButton>
+              <MenuList p={0}>
+                <Flex bg={"#172B4D"}>
+                  <Avatar
+                    mt={2}
+                    ml={2}
+                    h={"2.3rem"}
+                    w={"2.3rem"}
+                    src={"https://avatars.dicebear.com/api/male/username.svg"}
+                  />
+                  <Box ml={2} mt={2} fontSize={"0.9rem"} color={"white"}>
+                    <p style={{ marginTop: "0", padding: "0px", paddingRight: "0.3rem" }}>Username</p>
+                    <p style={{ marginTop: "0", padding: "0px", paddingRight: "0.3rem" }}>anujkshatriya82@gmail.com</p>
+                  </Box>
+                </Flex>
+                <MenuItem>Switch Account</MenuItem>
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>Licenses</MenuItem>
+                <MenuItem>Logout</MenuItem>
+              </MenuList>
+            </Menu>
+          </Flex>
+    
+          <Collapse in={isOpen} animateOpacity>
+            <MobileNav />
+          </Collapse>
+        </Box>
+      );
+    };
 
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
-  );
-}
 
 const DesktopNav: React.FC = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
