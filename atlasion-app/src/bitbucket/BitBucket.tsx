@@ -3,7 +3,13 @@ import { Box, Button, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react
 const BitBucket: React.FC = () => {
   return (
     <>
-    <Box  bg='rgb(222,235,255)' w='100%' p={4} color='black' height={500}>
+  
+    <Box  bg='rgb(222,235,255)'  p={4} color='black' height={500}  w={{base: "0em", // 0px
+  sm: "30em", // ~480px. em is a relative unit and is dependant on the font size.
+  md: "48em", // ~768px
+  lg: "62em", // ~992px
+  xl: "80em", // ~1280px
+  "2xl": "96em",  }}>
  <Text as='h1' align={'center'} color={'#42526e'}>Code & CI/CD, built for teams using Jira</Text>
  <Text as='h3' align={'center'} color={'#42526e'} fontFamily="Charlie Display">With best-in-class Jira integration, and built-in CI/CD, Bitbucket Cloud connects <br /> developer workflows from planning to incident management. Join millions of <br /> developers who choose to build on Bitbucket. </Text>
  <Button textAlign={'center'} marginLeft={700} bg={'blue'} color={'white'} padding={10} border={'none'} borderRadius={10}>Get it free</Button>
@@ -24,6 +30,20 @@ const BitBucket: React.FC = () => {
     <Text as="h1">Why choose Bitbucket Cloud?</Text>
   </Flex>
   
+</Box>
+<Box bg='rgb(9,30,66)' w='100%' p={4} color='white' height={600} display='flex' alignItems="center" justifyContent="center" marginTop={-150}>
+  {/* Contents */}
+  <Flex width="80%" justifyContent="space-between" alignItems="center" >
+    {/* Text Content */}
+    <Box width="50%">
+      <Text as="h1" fontSize={25} marginTop={4} color='#ffffff'>Collaborate across multiple teams</Text>
+      <Text as="h4" marginBottom={4} color='#ffffff'>Reduce context-switching by managing your Jira issues in Bitbucket with the built-in Jira UI. And when you include your issue key in commits, your Jira issue statuses update automatically.</Text>
+      <Text as="h5" marginTop={20}>Learn More</Text>
+    
+    </Box>
+    {/* Image */}
+    <Image src='https://wac-cdn.atlassian.com/dam/jcr:82085599-4ecc-4965-a101-ed9cbb2505e1/bitbucket-cloud-features-002_2x.png?cdnVersion=1523' height={400} width='60%'  />
+  </Flex>
 </Box>
 
 
@@ -267,6 +287,7 @@ const BitBucket: React.FC = () => {
    
   </Flex>
 </Box>
+
       
   </>
   
