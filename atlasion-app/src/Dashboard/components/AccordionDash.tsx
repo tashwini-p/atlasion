@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 export default function AccordionDash() {
   return (
-    <div>
+    <div className='accordionStyles'>
       <Accordion>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon />}
