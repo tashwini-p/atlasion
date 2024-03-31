@@ -5,12 +5,7 @@ import '@fontsource-variable/open-sans';
 const Jira: React.FC = () => {
   return (
     <>
-    <Box bg='rgb(9,30,66)' w={{base: "0em", 
-  sm: "20em", 
-  md: "48em", 
-  lg: "62em", 
-  xl: "80em", 
-  "2xl": "96em"}} p={4} color='white' marginTop={40} height={500} display='flex'>
+    <Box bg='rgb(9,30,66)' w={'100%'} p={4} color='white' marginTop={40} height={500} display='flex'>
       {/* Contents */}
       <Flex direction="column" justify="center" marginLeft={80} fontSize={25} width={800}>
         <h1 style={{fontFamily:"revert-layer"}}>Move fast, stay aligned,<br /> and build better - <br /> together</h1>
@@ -21,14 +16,7 @@ const Jira: React.FC = () => {
   height={30}
   border="none"
   fontFamily="revert-layer"
-  w={{
-    base: "0em",
-    sm: "20em",
-    md: "48em",
-    lg: "62em",
-    xl: "80em",
-    "2xl": "96em"
-  }}
+ 
   fontSize={16}
   padding="4%" borderRadius={10}
 >
@@ -44,12 +32,7 @@ const Jira: React.FC = () => {
       </Flex>
       
     </Box>
-    <Box bg='rgb(9,30,66)' w={{base: "0em", 
-  sm: "30em",
-  md: "48em",
-  lg: "62em", 
-  xl: "80em", 
-  "2xl": "96em"}} p={4} color='white' height={800} display='flex' flexDirection='column' alignItems='center' justifyContent='center'  marginTop={-300}>
+    <Box bg='rgb(9,30,66)' w={'100%'} p={4} color='white' height={800} display='flex' flexDirection='column' alignItems='center' justifyContent='center'  marginTop={-300}>
       <Flex as="h1" textAlign="center" fontFamily={'revert-layer'}>All from a single source of truth</Flex>
       
       <Stack spacing={20} direction='row' align='center' marginTop={4} fontFamily={`'Open Sans', sans-serif`} >
@@ -59,12 +42,7 @@ const Jira: React.FC = () => {
         <Button size='lg' borderRadius={90} height={40} width={100} border='none'fontFamily={'revert-layer'}fontSize={20}>Report</Button>
         <Button size='lg' borderRadius={90} height={40} width={130} border='none'fontFamily={'revert-layer'}fontSize={20}>Automate</Button>
       </Stack></Box>
-      <Box bg='rgb(9,30,66)' p={4} color='white'  height={600} display='flex' justifyContent='center' alignItems='center'  marginTop={-350} w={{base: "0em", // 0px
-  sm: "20em", 
-  md: "48em", 
-  lg: "62em", 
-  xl: "80em", 
-  "2xl": "96em"}}
+      <Box bg='rgb(9,30,66)' p={4} color='white' w={'100%'} height={600} display='flex' justifyContent='center' alignItems='center'  marginTop={-350} 
       >
   
       <Flex direction="column" justify="center" fontSize={25} textAlign="center"  >
@@ -82,15 +60,11 @@ const Jira: React.FC = () => {
       </Flex>
     
     </Box>
-    
-
-    <hr style={{ width: '400px', height: '10px', border: 'none', backgroundColor: 'white', margin: '25px 0'}} />
-
-   <Box bg='rgb(9,30,66)' w='100%' p={4} color='white' marginTop={-40} height={400} display='flex' flexDirection='column' alignItems='center'>
+    <Box bg='rgb(9,30,66)' w='100%' p={4} color='white' marginTop={-40} height={400} display='flex' flexDirection='column' alignItems='center'>
       {/* Contents */}
-      <Text as="h1" align='center' fontFamily={'revert-layer'}>Easier than ever</Text>
+      <Text as="h1" align='center' fontFamily={'revert-layer'} mt={100}>Easier than ever</Text>
       
-      <Flex direction="row" align="center" fontSize={25} mt={10}>
+      <Flex direction="row" align="center" fontSize={25} mt={-30}>
        
         <Flex align="center">
           <Image src='https://wac-cdn.atlassian.com/dam/jcr:ef95fe7f-398f-4690-83af-831ef07adf34/icon-templates.svg?cdnVersion=1216' width={100} height={100} />
@@ -270,12 +244,12 @@ const Jira: React.FC = () => {
       
       </Flex>
     </Box>
-    <Box  w='100%' p={4}  marginTop={200} height={500} display='flex'>
+    <Box  w='90%' p={4}  marginTop={100} height={500} display='flex'>
       {/* Contents */}
-      <Flex direction="column" justify="center" marginLeft={80} fontSize={25}>
+      <Flex direction="column" justify="center" marginLeft={200} fontSize={25}>
         <Image src='https://wac-cdn.atlassian.com/dam/jcr:aa8f5b1f-b8ac-4d6e-9e7c-abe573b68164/number-one.svg?cdnVersion=1198' height={300} width={300}></Image>
-        <Text as="h2" color={'#42526e'}>Why Jira is the #1  tool<br /> recommended by agile <br />teams.*</Text>
-        <Text as="p">Trusted by more than 100,000 organizations, Jira Software <br />comes out-of-the-box with the features and best practices <br /> agile teams need to develop and evolve their agile practices.</Text>
+        <Text as="h2" color={'#42526e'} fontSize={36.8}>Why Jira is the #1  tool recommended by agile teams.*</Text>
+        <Text as="p" fontSize={18}>Trusted by more than 100,000 organizations, Jira Software comes out-of-the-box with the features and best practices  agile teams need to develop and evolve their agile practices.</Text>
         <Text as="p" fontSize={18}>*2021 State of Agile Report</Text>
       </Flex>
      
@@ -286,31 +260,31 @@ const Jira: React.FC = () => {
       templateRows='repeat(2, 1fr)'
       templateColumns='repeat(2, 1fr)'
       gap={40}
-      marginLeft={160}
+      marginLeft={200}
     >
       <GridItem rowSpan={1} colSpan={1} >
-       <Image src='https://wac-cdn.atlassian.com/dam/jcr:c30fba51-a9ab-4815-ad95-83e3f7582349/resource-agile.png?cdnVersion=1198'   h='200px' w="400px"></Image>
+       <Image src='https://wac-cdn.atlassian.com/dam/jcr:c30fba51-a9ab-4815-ad95-83e3f7582349/resource-agile.png?cdnVersion=1198'   h='200px' w="350px"></Image>
     <Text as="a" color={"blue"} fontSize={20}>Learn agile best practices</Text>
       
       </GridItem>
       <GridItem rowSpan={1} colSpan={1}>
-      <Image src='https://wac-cdn.atlassian.com/misc-assets/webp-images/resource-playbook.webp'  h='200px' w="400px"></Image>
+      <Image src='https://wac-cdn.atlassian.com/misc-assets/webp-images/resource-playbook.webp'  h='200px' w="350px"></Image>
       <Text as="a" color={"blue"} fontSize={20}>Team Playbook</Text>
       </GridItem>
       <GridItem rowSpan={1} colSpan={1} >
-      <Image src='https://wac-cdn.atlassian.com/misc-assets/webp-images/resource-community.webp' h='200px' w="400px"></Image>
+      <Image src='https://wac-cdn.atlassian.com/misc-assets/webp-images/resource-community.webp' h='200px' w="350px"></Image>
       <Text as="a" color={"blue"} fontSize={20}>Jira Software community</Text>
       </GridItem>
       <GridItem rowSpan={1} colSpan={1} >
-    <Image src='https://wac-cdn.atlassian.com/dam/jcr:1de028c2-f441-40e9-b3ee-721e35e4a649/resource-devops.png?cdnVersion=1198'  h='200px' w="400px"></Image>
+    <Image src='https://wac-cdn.atlassian.com/dam/jcr:1de028c2-f441-40e9-b3ee-721e35e4a649/resource-devops.png?cdnVersion=1198'  h='200px' w="350px"></Image>
     <Text as="a" color={"blue"} fontSize={20}>Learn DevOps best practices</Text>
       </GridItem>
     </Grid>
     </Box>
     <Box bg='rgb(9,30,66)' w='100%' p={4} color='white' marginTop={130} height={400} display='flex'>
-  <Flex direction="column" justify="center" marginLeft={80} fontSize={25} marginTop={0}>
-    <Text as="h1">Built for teams of 1 to 35,000</Text>
-    <Text as="p" marginTop={-20}>A growing team doesn’t need to mean growing pains. With <br />best-of-breed features, security, privacy, and the right tool for <br />every step of your journey - Jira Software allows you to scale <br />without friction - regardless of your company size.</Text>
+  <Flex direction="column" justify="center" marginLeft={150} fontSize={25} marginTop={0}>
+    <Text as="h1" fontSize={36}>Built for teams of 1 to 35,000</Text>
+    <Text as="p" marginTop={20} fontSize={20}>A growing team doesn’t need to mean growing pains. With <br />best-of-breed features, security, privacy, and the right tool for <br />every step of your journey - Jira Software allows you to scale <br />without friction - regardless of your company size.</Text>
   </Flex>
   </Box>
   
@@ -325,11 +299,8 @@ const Jira: React.FC = () => {
     </Flex>
    
 </Box>
-
-
-
 <Box bg='rgb(9,30,66)' w='100%' p={4} color='white'  height={200} display='flex'>
-  <Flex direction="row" justify="center" marginLeft={100} fontSize={16} marginTop={0}>
+  <Flex direction="row" justify="center" marginLeft={100} fontSize={18} marginTop={-20}>
     <Text as="p" marginLeft={100} >Jira Software free forever  <br />for teams up to 10</Text>
     <Text as="p" marginTop={20} marginLeft={60}>Jira Software Standard for <br /> 
     growing teams</Text>
@@ -342,13 +313,12 @@ const Jira: React.FC = () => {
   <Box bg='rgb(9,30,66)' w='100%' p={4} color='white' height={200} display='flex'>
   <Center flex={1}>
     <Flex direction="column" justify="center" alignItems="center">
-      <Text as="h1" fontSize={40}>Get Started with Jira Software</Text>
-      <Button  bg="yellow" padding={15} border={'none'} mt={4} fontSize={16} borderRadius={10}>Get it free</Button>
+      <Text as="h1" fontSize={36}>Get Started with Jira Software</Text>
+      <Button  bg="rgb(255,171,0)"  padding={15} border={'none'} mt={4} fontSize={16} borderRadius={10}>Get it free</Button>
       <Text as="p" mt={40} fontSize={24}>See features</Text>
     </Flex>
   </Center>
 </Box>
-  
 
     </>
   );
