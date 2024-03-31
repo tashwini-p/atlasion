@@ -121,8 +121,6 @@ const NAV_ITEMS: NavItem[] = [
                 mx={9}
                 bg={"red"}
                 color={"black"}
-                _hover={"none"}
-                _active={"none"}
               >
                 <Text>DG</Text>
               </MenuButton>
