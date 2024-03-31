@@ -1,13 +1,14 @@
+import './App.css'
+import AdminRoutes from './Routes/AdminRoutes'
+import AllRoutes from './Routes/AllRoutes'
 
-
-import { Confluence } from './confluence/Confluence'
 
 function App() {
 
-
   return (
     <>
-     <Confluence/>
+      <AllRoutes/>
+      <AdminRoutes/>
     </>
   )
 }

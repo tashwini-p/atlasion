@@ -1,0 +1,45 @@
+.paddingAll{
+    padding: 10px 10px 10px 10px;
+}
+
+.priceTitle{
+    font-weight: 600;
+}
+
+.priceSubTitle{
+    font-size: 14px;
+}
+
+.iconStyle{
+    margin-top: 20px;
+    
+    margin-right: 20px;
+    color: white;
+}
+
+.cardGradient{
+    background: #0065ff ;
+    background: linear-gradient(158deg, rgba(0,101,255) 0%, rgba(0,101,255) 100%);
+}
+
+.cardGradientLight{
+    color: black;
+    padding-left: 20px;
+    background: rgb(53,138,148);
+    background: linear-gradient(158deg, rgba(131,181,55) 0%, rgb(197, 255, 111) 100%);
+}
+
+.bgcolor{
+    min-height: 100vh;
+    background-color: #ECEFF1;
+    background: linear-gradient(159deg, rgb(224,224,224) 0%, rgb(233,237,254) 100%);
+}
+
+
+@media only screen and (min-width: 600px) {
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
