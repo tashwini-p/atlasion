@@ -7,7 +7,7 @@ GET https://atlasion.onrender.com/users
 POST https://atlasion.onrender.com/register
 Content-Type: application/json
 
-    {
+   {
       "username": "codingNinja",
       "password": "code456",
       "email": "codingninja@example.com",
