@@ -18,10 +18,9 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import {useAppStore} from "../zustand/appStore"
 
 
-
 const AppBar = styled(MuiAppBar, {
 })(({ theme }) => ({
-  zIndex: theme.zIndex.drawer + 1,
+  zIndex: theme.zIndex.modal + 1,
 }));
 
 const Search = styled('div')(({ theme }) => ({
@@ -174,7 +173,7 @@ export default function Navbar() {
             size="large"
             edge="start"
             color="inherit"
-            aria-label="open drawer"
+            aria-label="open modal"
             sx={{ mr: 2 }}
             onClick={()=>updateOpen(!dopen)}
           >
