@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, useMediaQuery } from "@mui/material"
 import Sidenav from "../components/Sidenav"
 import Grid from '@mui/system/Unstable_Grid';
 import Navbar from "../components/Navbar";
@@ -16,6 +16,8 @@ import CountUp from 'react-countup';
 
 
 const DashHome = () => {
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
+
   return (
     <>
       <div className="bgcolor">
@@ -24,9 +26,9 @@ const DashHome = () => {
         <Box marginLeft={2} sx={{ display: 'flex' }}>
           <Sidenav/>
           <Box component="main" sx={{flexGrow:1, p:3}}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
               <Grid xs={8}>
-                <Stack spacing={2} direction={"row"}>
+                <Stack spacing={2} direction={{xs: 'column', sm: 'column', md:'row'}}>
                   <Card className="cardGradient" sx={{ minWidth: 49 + "%", height: 150 }}>
                     <CardContent>
                       <div>
@@ -56,7 +58,7 @@ const DashHome = () => {
                 </Stack>
               </Grid>
               <Grid xs={4}>
-                <Stack spacing={2}>
+                <Stack spacing={2} direction={{xs: 'column', sm: 'column', md:'column'}}>
                 <Card className="cardGradientLight" sx={{ maxWidth: 345 }}>
                     <Stack direction={"row"}>
                       <div className="iconStyle"><StorefrontIcon/></div>
@@ -82,23 +84,25 @@ const DashHome = () => {
             </Grid>
             <Box height={20}/>
             <Grid container spacing={2}>
-              <Grid xs={8}>
-              <Card sx={{ height: 60 + "vh" }}>
-                  <CardContent>
-                    <BarChart/>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid xs={4}>
-              <Card sx={{ height: 60 + "vh" }}>
-                  <CardContent>
-                      <div className="paddingAll">
-                        <span className="priceTitle">Popular Products</span>
-                      </div>
-                    <AccordionDash/>
-                  </CardContent>
-                </Card>
-              </Grid>
+              <Stack direction={{xs: 'column', sm: 'column', md:'row'}}>
+                <Grid xs={12} md={8} style={{ display: isSmallScreen ? 'none' : 'block' }}>
+                <Card sx={{ height: 60 + "vh" }}>
+                    <CardContent>
+                      <BarChart/>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid xs={12} md={4}>
+                <Card sx={{ height: 60 + "vh" }}>
+                    <CardContent>
+                        <div className="paddingAll">
+                          <span className="priceTitle">Popular Products</span>
+                        </div>
+                      <AccordionDash/>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Stack>
             </Grid>
           </Box>
         </Box>
