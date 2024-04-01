@@ -9,17 +9,20 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import clock from "./assets/JSM_ASSETS/clock_svg.png";
-import itsm from "./assets/JSM_ASSETS/ITSM.png";
-import upArrow from "./assets/JSM_ASSETS/upArrow.svg";
-import rightArrow from "./assets/JSM_ASSETS/rightArrow.svg";
-import smile from "./assets/JSM_ASSETS/Smile.png";
-import group from "./assets/JSM_ASSETS//Group.png";
+import clock from "../assets/JSM_ASSETS/clock_svg.png";
+import itsm from "../assets/JSM_ASSETS/ITSM.png";
+import upArrow from "../assets/JSM_ASSETS/upArrow.svg";
+import rightArrow from "../assets/JSM_ASSETS/rightArrow.svg";
+import smile from "../assets/JSM_ASSETS/Smile.png";
+import group from "../assets/JSM_ASSETS//Group.png";
 import "./JiraServiceManagement.css";
+import Footer from "../HomePage/Footer";
+import { Navbar } from "../HomePage/Navbar";
 
 const JiraServiceManagement: React.FC = () => {
   return (
     <>
+    <Navbar/>
       <Box
         maxWidth="600px"
         paddingBlockStart="3rem"
@@ -866,6 +869,7 @@ const JiraServiceManagement: React.FC = () => {
           </Flex>
         </Flex>
       </Flex>
+      <Footer/>
     </>
   );
 };
