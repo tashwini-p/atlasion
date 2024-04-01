@@ -15,13 +15,13 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-
+import {NewCard} from "../confluence/NewCard"
 
 const Confluence = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
  
   return (
-    // {isLoading?<Spinner size="xl" color="blue.500" />:(
+   
     <Box
       // bg={{
       //   base: "gray",
@@ -65,149 +65,8 @@ const Confluence = () => {
         >
           Get Confluence free
         </Button>
-        <Flex
-          direction={{
-            base: "column",
-            sm: "column",
-            md: "column",
-            lg: "column",
-            xl: "row",
-            "2xl": "row",
-          }}
-          height={"auto"}
-          justifyContent={{
-            base: "center",
-            sm: "center",
-            md: "center",
-          }}
-          alignItems={{
-            base: "center",
-            sm: "center",
-            md: "center",
-          }}
-          margin={"auto"}
-          gap={"80px"}
-        >
-          <Flex
-            direction={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "column",
-              xl: "column",
-              "2xl": "column",
-            }}
-            gap={"20px"}
-          >
-            <Box
-              boxShadow="md"
-              height={{
-                base: "130px",
-                sm: "110px",
-                md: "110px",
-                lg: "110px",
-                xl: "130px",
-                "2xl": "130px",
-              }}
-              width={{
-                base: "95%",
-                sm: "90%",
-                md: "99%",
-                lg: "95%",
-                xl: "95%",
-                "2xl": "95%",
-              }}
-              p="3"
-              rounded="md"
-              bg="white"
-              margin={"auto"}
-            >
-              <Text fontSize={"18px"} fontWeight={"medium"}>
-                Start with Page{" "}
-              </Text>
-              <Text>
-                Plan projects, take notes, and brainstorm. Let AI write your
-                first draft.
-              </Text>
-            </Box>
-            <Box
-              boxShadow="md"
-              p="3"
-              height={{
-                base: "130px",
-                sm: "110px",
-                md: "110px",
-                lg: "110px",
-                xl: "130px",
-                "2xl": "130px",
-              }}
-              width={{
-                base: "95%",
-                sm: "90%",
-                md: "99%",
-                lg: "95%",
-                xl: "95%",
-                "2xl": "95%",
-              }}
-              rounded="md"
-              bg="white"
-              margin={"auto"}
-            >
-              <Text fontSize={"18px"} fontWeight={"medium"}>
-                Share with your teams
-              </Text>
-              <Text>
-                Invite your teams to collaborate using real-time editing and
-                inline comments.
-              </Text>
-            </Box>
-            <Box
-              boxShadow="md"
-              p="3"
-              height={{
-                base: "130px",
-                sm: "110px",
-                md: "110px",
-                lg: "110px",
-                xl: "130px",
-                "2xl": "130px",
-              }}
-              width={{
-                base: "95%",
-                sm: "90%",
-                md: "99%",
-                lg: "95%",
-                xl: "95%",
-                "2xl": "95%",
-              }}
-              rounded="md"
-              bg="white"
-              margin={"auto"}
-            >
-              <Text fontSize={"18px"} fontWeight={"medium"}>
-                Connect all your work
-              </Text>
-              <Text>
-                Stay organized in dedicated workspaces, equipped with AI-powered
-                search.
-              </Text>
-            </Box>
-          </Flex>
-
-          <Image
-            width={{
-              base: "90%",
-              sm: "90%",
-              md: "90%",
-              lg: "90%",
-              xl: "60%",
-              "2xl": "60%",
-            }}
-            height={"100%"}
-            src="https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-create-a-page.webp"
-          />
-        </Flex>
-      </Box>
+        <NewCard/>
+        </Box>
       <Box width={"95%"} margin={"auto"}>
         <Text fontSize={"20px"} m={"40px"} fontWeight={"normal"}>
           75,000+ customers rely on Confluence to share knowledge
