@@ -4,20 +4,24 @@ import {
   Flex,
   Image,
   Text,
-  SimpleGrid,
+ 
   Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Heading,
+ 
+ 
   Link,
-  Stack,
+  
   Grid,
-  GridItem,
+
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+
+
 
 const Confluence = () => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+ 
   return (
+    // {isLoading?<Spinner size="xl" color="blue.500" />:(
     <Box
       // bg={{
       //   base: "gray",
@@ -28,176 +32,186 @@ const Confluence = () => {
       //   "2xl": "blue",
       // }}
       textAlign={"center"}
-      width={"100%"}
+      
       bgGradient="linear(to-b, #b5d5ff, white,#e6fcff,white )"
     >
-      <Box fontSize={"xl"}>POWERED BY AI</Box>
+     
       <Box width={"95%"} margin={"auto"}>
-      <Text fontSize={"5xl"} fontWeight={"medium"}>
-        Goodbye silos, hello teamwork
-      </Text>
-      </Box>
-      <Box width={"95%"} margin={"auto"}>
-      <Text fontSize={"2xl"}  >
-        Create, organize, and share work with AI by your side. Turn scattered
-        information into a single source of truth.
-      </Text>
-      </Box>
-      <Button
-        bg={"#0052cc"}
-        margin={"30px"}
-        color={"white"}
-        padding={"20px"}
-        fontSize={"xl"}
-      >
-        Get Confluence free
-      </Button>
-      <Flex
-        direction={{
-          base: "column",
-          sm: "column",
-          md: "column",
-          lg: "column",
-          xl: "row",
-          "2xl": "row",
-        }}
-        height={"auto"}
-        justifyContent={{
-          base: "center",
-          sm: "center",
-          md: "center",
-        }}
-        alignItems={{
-          base: "center",
-          sm: "center",
-          md: "center",
-        }}
-        margin={"auto"}
-        gap={"100px"}
-      >
+        <Box
+          width={"40%"}
+          margin={"auto"}
+          fontSize={"15px"}
+          p="1"
+        >
+          POWERED BY AI
+        </Box>
+        <Box width={"95%"} margin={"auto"}>
+          <Text fontSize={"4xl"} fontWeight={"medium"}>
+            Goodbye silos, hello teamwork
+          </Text>
+        </Box>
+        <Box width={"55%"} margin={"auto"}>
+          <Text fontSize={"20px"}>
+            Create, organize, and share work with AI by your side. Turn
+            scattered information into a single source of truth.
+          </Text>
+        </Box>
+        <Button
+          bg={"#0052cc"}
+          margin={"30px"}
+          color={"white"}
+          padding={"20px"}
+          fontSize={"16px"}
+        >
+          Get Confluence free
+        </Button>
         <Flex
           direction={{
             base: "column",
             sm: "column",
             md: "column",
             lg: "column",
-            xl: "column",
-            "2xl": "column",
+            xl: "row",
+            "2xl": "row",
           }}
-          gap={"20px"}
+          height={"auto"}
+          justifyContent={{
+            base: "center",
+            sm: "center",
+            md: "center",
+          }}
+          alignItems={{
+            base: "center",
+            sm: "center",
+            md: "center",
+          }}
+          margin={"auto"}
+          gap={"80px"}
         >
-          <Box
-            boxShadow="md"
-            height={{
-              base: "190px",
-              sm: "150px",
-              md: "150px",
-              lg: "150px",
-              xl: "150px",
-              "2xl": "150px",
+          <Flex
+            direction={{
+              base: "column",
+              sm: "column",
+              md: "column",
+              lg: "column",
+              xl: "column",
+              "2xl": "column",
             }}
-            width={{
-              base: "95%",
-              sm: "90%",
-              md: "99%",
-              lg: "95%",
-              xl: "500px",
-              "2xl": "600px",
-            }}
-            p="6"
-            rounded="md"
-            bg="white"
-            margin={"auto"}
+            gap={"20px"}
           >
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Start with Page{" "}
-            </Text>
-            <Text>
-              Plan projects, take notes, and brainstorm. Let AI write your first
-              draft.
-            </Text>
-          </Box>
-          <Box
-            boxShadow="md"
-            p="6"
-            height={{
-              base: "190px",
-              sm: "150px",
-              md: "150px",
-              lg: "150px",
-              xl: "150px",
-              "2xl": "150px",
-            }}
-            width={{
-              base: "95%",
-              sm: "90%",
-              md: "99%",
-              lg: "95%",
-              xl: "500px",
-              "2xl": "600px",
-            }}
-            rounded="md"
-            bg="white"
-            margin={"auto"}
-          >
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Share with your teams
-            </Text>
-            <Text>
-              Invite your teams to collaborate using real-time editing and
-              inline comments.
-            </Text>
-          </Box>
-          <Box
-            boxShadow="md"
-            p="6"
-            height={{
-              base: "190px",
-              sm: "150px",
-              md: "150px",
-              lg: "150px",
-              xl: "150px",
-              "2xl": "150px",
-            }}
-            width={{
-              base: "95%",
-              sm: "90%",
-              md: "99%",
-              lg: "95%",
-              xl: "500px",
-              "2xl": "600px",
-            }}
-            rounded="md"
-            bg="white"
-            margin={"auto"}
-          >
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Connect all your work
-            </Text>
-            <Text>
-              Stay organized in dedicated workspaces, equipped with AI-powered
-              search.
-            </Text>
-          </Box>
-        </Flex>
+            <Box
+              boxShadow="md"
+              height={{
+                base: "130px",
+                sm: "110px",
+                md: "110px",
+                lg: "110px",
+                xl: "130px",
+                "2xl": "130px",
+              }}
+              width={{
+                base: "95%",
+                sm: "90%",
+                md: "99%",
+                lg: "95%",
+                xl: "95%",
+                "2xl": "95%",
+              }}
+              p="3"
+              rounded="md"
+              bg="white"
+              margin={"auto"}
+            >
+              <Text fontSize={"18px"} fontWeight={"medium"}>
+                Start with Page{" "}
+              </Text>
+              <Text>
+                Plan projects, take notes, and brainstorm. Let AI write your
+                first draft.
+              </Text>
+            </Box>
+            <Box
+              boxShadow="md"
+              p="3"
+              height={{
+                base: "130px",
+                sm: "110px",
+                md: "110px",
+                lg: "110px",
+                xl: "130px",
+                "2xl": "130px",
+              }}
+              width={{
+                base: "95%",
+                sm: "90%",
+                md: "99%",
+                lg: "95%",
+                xl: "95%",
+                "2xl": "95%",
+              }}
+              rounded="md"
+              bg="white"
+              margin={"auto"}
+            >
+              <Text fontSize={"18px"} fontWeight={"medium"}>
+                Share with your teams
+              </Text>
+              <Text>
+                Invite your teams to collaborate using real-time editing and
+                inline comments.
+              </Text>
+            </Box>
+            <Box
+              boxShadow="md"
+              p="3"
+              height={{
+                base: "130px",
+                sm: "110px",
+                md: "110px",
+                lg: "110px",
+                xl: "130px",
+                "2xl": "130px",
+              }}
+              width={{
+                base: "95%",
+                sm: "90%",
+                md: "99%",
+                lg: "95%",
+                xl: "95%",
+                "2xl": "95%",
+              }}
+              rounded="md"
+              bg="white"
+              margin={"auto"}
+            >
+              <Text fontSize={"18px"} fontWeight={"medium"}>
+                Connect all your work
+              </Text>
+              <Text>
+                Stay organized in dedicated workspaces, equipped with AI-powered
+                search.
+              </Text>
+            </Box>
+          </Flex>
 
-        <Image
-          width={{
-            base: "90%",
-            sm: "90%",
-            md: "90%",
-            lg: "90%",
-            xl: "700px",
-            "2xl": "1000px",
-          }}
-          height={"100%"}
-          src="https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-create-a-page.webp"
-        />
-      </Flex>
+          <Image
+            width={{
+              base: "90%",
+              sm: "90%",
+              md: "90%",
+              lg: "90%",
+              xl: "60%",
+              "2xl": "60%",
+            }}
+            height={"100%"}
+            src="https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-create-a-page.webp"
+          />
+        </Flex>
+      </Box>
       <Box width={"95%"} margin={"auto"}>
-      <Text fontSize={"2xl"} m={"40px"}>
-        75,000+ customers rely on Confluence to share knowledge
-      </Text>
+        <Text fontSize={"20px"} m={"40px"} fontWeight={"normal"}>
+          75,000+ customers rely on Confluence to share knowledge
+        </Text>
       </Box>
       <Flex
         width={{
@@ -232,97 +246,97 @@ const Confluence = () => {
         <Image
           backgroundPosition={"center"}
           height={{
-            base: "120px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           width={{
-            base: "100px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           src="https://wac-cdn.atlassian.com/misc-assets/svgs/canva-n50.svg"
         />
         <Image
           height={{
-            base: "120px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           width={{
-            base: "100px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:35c6a74c-a259-4dac-8df8-ea8c5b12f44d/nasa-n50.svg"
         />
         <Image
           height={{
-            base: "120px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           width={{
-            base: "100px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           src="https://wac-cdn.atlassian.com/dam/jcr:46501297-a5e1-482a-9f8f-3718dd24376e/redfin.svg"
         />
         <Image
           height={{
-            base: "120px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           width={{
-            base: "100px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           src="https://wac-cdn.atlassian.com/dam/jcr:0a7dd09c-7f87-4bc9-8b65-318b0a41efb8/twitter.svg"
         />
         {/* <Image height={"150px"} width={"145px"} src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:475f41d8-45f4-48c9-a9b2-d78215ae4b16/nyt-n50.svg"/> */}
         <Image
           height={{
-            base: "120px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           width={{
-            base: "100px",
-            sm: "80px",
-            md: "80px",
-            lg: "100px",
-            xl: "150px",
-            "2xl": "150px",
+            base: "60px",
+            sm: "60px",
+            md: "60px",
+            lg: "80px",
+            xl: "100px",
+            "2xl": "100px",
           }}
           src="https://wac-cdn.atlassian.com/misc-assets/svgs/audi-n50.svg"
         />
@@ -330,26 +344,26 @@ const Confluence = () => {
       <Box>
         {/* "6xl" */}
         <Box width={"95%"} margin={"auto"}>
-        <Text
-          fontSize={{
-            base: "3xl",
-            sm: "3xl",
-            md: "4xl",
-            lg: "4xl",
-            xl: "4xl",
-            "2xl": "4xl",
-          }}
-          fontWeight={"bold"}
-          mb={"20px"}
-        >
-          Templates for every team and task
-        </Text>
+          <Text
+            fontSize={{
+              base: "3xl",
+              sm: "3xl",
+              md: "4xl",
+              lg: "4xl",
+              xl: "4xl",
+              "2xl": "4xl",
+            }}
+            fontWeight={"bold"}
+            mb={"20px"}
+          >
+            Templates for every team and task
+          </Text>
         </Box>
-        <Box width={"95%"} margin={"auto"}> 
-        <Text fontSize={"2xl"} mb={"60px"}>
-          Work smarter and draw inspiration from hundreds of customizable,
-          pre-built templates.
-        </Text>
+        <Box width={"95%"} margin={"auto"}>
+          <Text fontSize={"19px"} mb={"60px"}>
+            Work smarter and draw inspiration from hundreds of customizable,
+            pre-built templates.
+          </Text>
         </Box>
         <Flex
           mt={"20px"}
@@ -379,72 +393,68 @@ const Confluence = () => {
           }}
           margin={"auto"}
           mb={{
-            base: "400px",
-            sm: "350px",
-            md: "350px",
-            lg:"80px",
-            xl: "80px",
-            "2xl": "80px",
+            base: "220px",
+            sm: "270px",
+            md: "270px",
+            lg: "10px",
+            xl: "10px",
+            "2xl": "10px",
           }}
           // gap={"100px"}
           justifyContent={"center"}
           alignItems={"center"}
         >
           <Button
-          
-            fontSize={"xl"}
+           fontSize={"17px"}
             width={{
-              base: "180px",
-              sm: "200px",
-              md: "230px",
-              lg: "230px",
-              xl: "200px",
-              "2xl": "200px",
+              base: "150px",
+              sm: "150px",
+              md: "180px",
+              lg: "150px",
+              xl: "150px",
+              "2xl": "150px",
             }}
             _hover={{ bg: "#00a3bf" }}
           >
             Project Planning
           </Button>
           <Button
-            
-            fontSize={"xl"}
+            fontSize={"17px"}
             width={{
-              base: "230px",
-              sm: "230px",
-              md: "350px",
-              lg: "230px",
-              xl: "250px",
-              "2xl": "250px",
+              base: "200px",
+              sm: "200px",
+              md: "200px",
+              lg: "200px",
+              xl: "200px",
+              "2xl": "200px",
             }}
             _hover={{ bg: "#00a3bf" }}
           >
             Software Development
           </Button>
           <Button
-           
-            fontSize={"xl"}
+            fontSize={"17px"}
             width={{
-              base: "230px",
-              sm: "230px",
-              md: "350px",
-              lg: "230px",
-              xl: "230px",
-              "2xl": "250px",
+              base: "200px",
+              sm: "200px",
+              md: "200px",
+              lg: "200px",
+              xl: "200px",
+              "2xl": "200px",
             }}
             _hover={{ bg: "#00a3bf" }}
           >
             Product management
           </Button>
           <Button
-            
-            fontSize={"xl"}
+           fontSize={"17px"}
             width={{
-              base: "200px",
-              sm: "200px",
-              md: "250px",
-              lg: "200px",
-              xl: "200px",
-              "2xl": "200px",
+              base: "170px",
+              sm: "170px",
+              md: "180px",
+              lg: "170px",
+              xl: "170px",
+              "2xl": "170px",
             }}
             _hover={{ bg: "#00a3bf" }}
           >
@@ -460,7 +470,6 @@ const Confluence = () => {
             xl: "98%",
             "2xl": "90%",
           }}
-        
           margin={"auto"}
           direction={{
             base: "column",
@@ -489,107 +498,160 @@ const Confluence = () => {
             "2xl": "100px",
           }}
           mb={{
-            base: "400px",
-            sm: "350px",
-            md: "350px",
-            lg:"50px",
-            xl: "50px",
-            "2xl": "50px",
+            base: "230px",
+            sm: "200px",
+            md: "200px",
+            lg: "10px",
+            xl: "10px",
+            "2xl": "10px",
           }}
         >
-          <Card width={{
-            base: "90%",
-            sm: "90%",
-            md: "60%",
-            lg: "27%",
-            xl: "25%",
-            "2xl": "25%",
-          }}  height={"300px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-            <Flex alignItems={"center"} justifyContent={"space-evenly"}>
-              <Image src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:438d81bd-fb9b-4711-ae6d-09b51690199b/project-plan.svg?cdnVersion=1282" />
-              <span>Atlasian</span>
-            </Flex>
-          
-              <Text fontSize={"3xl"} fontWeight={"normal"} mt={"20px"} >
-                Project Planning
-              </Text>
-            
-            <CardFooter>
-              <Box width={"90%"} fontSize={"xl"} textAlign={"justify"}>
-                Define ,scope and plan milestones for your next project
-              </Box>
-            </CardFooter>
+          <Card
+            width={{
+              base: "90%",
+              sm: "90%",
+              md: "60%",
+              lg: "20%",
+              xl: "20%",
+              "2xl": "20%",
+            }}
+            display={"flex"}
+            alignItems={"flex-start"}
+            justifyContent={"space-evenly"}
+            height={"300px"}
+            boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+            rounded="md"
+            bg="white"
+            p={"20px"}
+          >
+            <Box 
+              width={"100%"}
+              display={"flex"}
+              alignItems={"flex-start"}
+              gap={"40px"}
+            >
+              <Image  src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:438d81bd-fb9b-4711-ae6d-09b51690199b/project-plan.svg?cdnVersion=1282" />
+              <Text fontSize={"18px"} >Atlasian</Text>
+            </Box>
+
+            <Text  mt={"20px"} fontSize={"20px"} fontWeight={"medium"} >
+              Project Planning
+            </Text>
+
+            <Text mt={"20px"}  fontSize={"16px"} width={"90%"}  textAlign={"left"} >Define,scope and plan milestones for your next project
+            </Text>
           </Card>
-          <Card width={{
-             base: "90%",
-             sm: "90%",
-             md: "60%",
-             lg: "27%",
-             xl: "25%",
-             "2xl": "25%",
-          }}   height={"300px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-            <Flex alignItems={"center"} justifyContent={"space-evenly"}>
-              <Image src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:89b4a632-75c6-4476-b9d7-c65b03ad6baf/project-poster.svg?cdnVersion=1282" />
-              <span>Mural</span>
-            </Flex>
-           
-              <Text fontSize={"3xl"} fontWeight={"normal"} mt={"20px"} >
-                BrainStorming
-              </Text>
-           
-            <CardFooter>
-              <Box width={"90%"} fontSize={"xl"} textAlign={"justify"}>
-                Plan ,run and document a remote brainstorming session for your
+          <Card
+             width={{
+              base: "90%",
+              sm: "90%",
+              md: "60%",
+              lg: "20%",
+              xl: "20%",
+              "2xl": "20%",
+            }}
+            display={"flex"}
+            alignItems={"flex-start"}
+            justifyContent={"space-evenly"}
+            height={"300px"}
+            boxShadow={isHovered ? "xl" : "md"}
+            transition="box-shadow 0.3s ease"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            cursor="pointer"
+            rounded="md"
+            bg="white"
+            p={"20px"}
+          >
+            <Box 
+              width={"100%"}
+              display={"flex"}
+              alignItems={"flex-start"}
+              gap={"40px"}
+            >
+              <Image  src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:89b4a632-75c6-4476-b9d7-c65b03ad6baf/project-poster.svg?cdnVersion=1282" />
+              <Text fontSize={"18px"} >Atlasian</Text>
+            </Box>
+
+            <Text mt={"20px"}  fontSize={"20px"} fontWeight={"medium"} >
+            BrainStorming
+            </Text>
+
+            <Text mt={"20px"}  fontSize={"16px"} width={"90%"}  textAlign={"left"} >Plan ,run and document a remote brainstorming session for your
                 next great idea
-              </Box>
-            </CardFooter>
-          </Card>
-          <Card width={{
-            base: "90%",
-            sm: "90%",
-            md: "60%",
-            lg: "27%",
-            xl: "25%",
-            "2xl": "25%",
-          }}  height={"300px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-            <Flex alignItems={"center"} justifyContent={"space-evenly"}>
-              <Image src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:46179faa-d522-4456-84aa-5506c421b7cb/retrospective.svg?cdnVersion=1282" />
-              <span>Atlasian</span>
-            </Flex>
+            </Text>
            
-              <Text fontSize={"3xl"} fontWeight={"normal"} mt={"20px"} >
-                Restospective
-              </Text>
-          
-            <CardFooter>
-              <Box width={"90%"} fontSize={"xl"} textAlign={"justify"}>
-                what went well?what could have gone better
-              </Box>
-            </CardFooter>
+          </Card>
+          <Card
+             width={{
+              base: "90%",
+              sm: "90%",
+              md: "60%",
+              lg: "20%",
+              xl: "20%",
+              "2xl": "20%",
+            }}
+            display={"flex"}
+            alignItems={"flex-start"}
+            justifyContent={"space-evenly"}
+            height={"300px"}
+            boxShadow={isHovered ? "xl" : "md"}
+            transition="box-shadow 0.3s ease"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            cursor="pointer"
+            rounded="md"
+            bg="white"
+            p={"20px"}
+          >
+            <Box 
+              width={"100%"}
+              display={"flex"}
+              alignItems={"flex-start"}
+              gap={"40px"}
+            >
+              <Image  src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:46179faa-d522-4456-84aa-5506c421b7cb/retrospective.svg?cdnVersion=1282" />
+              <Text fontSize={"18px"} >Atlasian</Text>
+            </Box>
+
+            <Text mt={"20px"}  fontSize={"20px"} fontWeight={"medium"} >
+            Restospective
+            </Text>
+
+            <Text mt={"20px"} fontSize={"16px"} width={"90%"}  textAlign={"left"} >Define,scope and plan milestones for your next project
+            </Text>
+            
           </Card>
         </Flex>
-        <Text color={"blue.600"} fontSize={"2xl"}>
+        <Text color={"blue.600"} fontSize={"18px"}>
           <Link color="teal.500" href="#">
             see all project panning templates
           </Link>
         </Text>
-        <Text  fontSize={{
+        <Text
+          fontSize={{
             base: "2xl",
             sm: "2xl",
             md: "3xl",
             lg: "3xl",
             xl: "4xl",
             "2xl": "4xl",
-          }} mt={"40px"}
-           mb={{
-            base: "450px",
-            sm: "430px",
-            md: "430px",
-            lg:"50px",
-            xl: "50px",
-            "2xl": "50px",
           }}
-           fontWeight={"medium"}>
+          mt={"40px"}
+          mb={{
+            base: "300px",
+            sm: "270px",
+            md: "250px",
+            lg: "20px",
+            xl: "20px",
+            "2xl": "20px",
+          }}
+          fontWeight={"medium"}
+        >
           Why confluences
         </Text>
       </Box>
@@ -602,7 +664,6 @@ const Confluence = () => {
           xl: "98%",
           "2xl": "90%",
         }}
-      
         margin={"auto"}
         direction={{
           base: "column",
@@ -618,9 +679,9 @@ const Confluence = () => {
           base: "200px",
           sm: "200px",
           md: "280px",
-          lg: "400px",
-          xl: "400px",
-          "2xl": "400px",
+          lg: "300px",
+          xl: "300px",
+          "2xl": "300px",
         }}
         gap={{
           base: "20px",
@@ -634,37 +695,51 @@ const Confluence = () => {
           base: "400px",
           sm: "350px",
           md: "350px",
-          lg:"50px",
+          lg: "50px",
           xl: "50px",
           "2xl": "50px",
         }}
       >
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
             md: "60%",
-            lg: "28%",
-            xl: "25%",
-            "2xl": "25%",
-          }} height={"350px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
-            {/* <i className="fa-solid fa-lightbulb"></i> */}
+            lg: "350px",
+            xl: "350px",
+            "2xl": "350px",
+          }}
+          height={"250px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+          
+          
             <Box
-              height={"120px"}
-              width={"120px"}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
+              height={"80px"}
+              width={"80px"}
               bg={"blue.100"}
               borderRadius={"50%"}
               p={"4"}
-              marginLeft={"100px"}
+              
             >
               <svg
                 id="icon-object-lightbulb"
-                width="82px"
-                height="82px"
+                width="62px"
+                height="62px"
                 viewBox="0 0 46 65"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                
               >
                 <g
                   stroke="none"
@@ -682,45 +757,58 @@ const Confluence = () => {
                 </g>
               </svg>
             </Box>
-          </CardHeader>
           
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Visual communication
-            </Text>
-          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+
+          <Text fontSize={"2xl"} fontWeight={"medium"} textAlign={"left"} mb={"20px"} mt={"20px"}>
+            Visual communication
+          </Text>
+
+         
+            <Text fontSize={"15px"} textAlign={"left"} width={"100%"}>
               Bring your ideas to life: from brainstorming in whiteboards to
               project plans in pages.
             </Text>
-          </CardFooter>
+         
         </Card>
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
             md: "60%",
-            lg: "28%",
-            xl: "25%",
-            "2xl": "25%",
-          }} height={"350px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
+            lg: "350px",
+            xl: "350px",
+            "2xl": "350px",
+          }}
+          height={"250px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+         
             {/* <i className="fa-solid fa-building"></i> */}
             <Box
-              height={"120px"}
-              width={"120px"}
-              bg={"blue.100"}
-              borderRadius={"50%"}
-              p={"4"}
-              marginLeft={"100px"}
+             display={"flex"}
+             alignItems={"center"}
+             justifyContent={"center"}
+               height={"80px"}
+               width={"80px"}
+               bg={"blue.100"}
+               borderRadius={"50%"}
+               p={"4"}
             >
               <svg
                 id="icon-object-building"
-                width="82px"
-                height="82px"
+                width="62px"
+                height="62px"
                 viewBox="0 0 65 41"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+               
               >
                 <g
                   stroke="none"
@@ -738,45 +826,58 @@ const Confluence = () => {
                 </g>
               </svg>
             </Box>
-          </CardHeader>
          
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Organization that scales
-            </Text>
+
+          <Text  fontSize={"2xl"} fontWeight={"medium"} textAlign={"left"} mb={"20px"} mt={"20px"}>
+            Organization that scales
+          </Text>
+
          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+            <Text fontSize={"15px"} textAlign={"left"} width={"100%"}>
               No matter your team size, projects and company knowledge are
               always findable and up-to-date.
             </Text>
-          </CardFooter>
+          
         </Card>
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
             md: "60%",
-            lg: "28%",
-            xl: "25%",
-            "2xl": "25%",
-          }} height={"350px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
-            {/* <i className="fa-solid fa-briefcase"></i> */}
+            lg: "350px",
+            xl: "350px",
+            "2xl": "350px",
+          }}
+          height={"250px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+          
+            
             <Box
-              height={"120px"}
-              width={"120px"}
-              bg={"blue.100"}
-              borderRadius={"50%"}
-              p={"4"}
-              marginLeft={"100px"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+                height={"70px"}
+                width={"70px"}
+                bg={"blue.100"}
+                borderRadius={"50%"}
+                p={"5"}
             >
               <svg
                 id="icon-object-lock"
-                width="82px"
-                height="82px"
+                width="62px"
+                height="62px"
                 viewBox="0 0 52 64"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+               
               >
                 <g
                   stroke="none"
@@ -794,45 +895,57 @@ const Confluence = () => {
                 </g>
               </svg>
             </Box>
-          </CardHeader>
          
-            <Text fontSize={"2xl"} fontWeight={"medium"}>
-              Information protection
-            </Text>
-          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+
+          <Text  fontSize={"2xl"} fontWeight={"medium"} textAlign={"left"} mb={"20px"} mt={"20px"}>
+            Information protection
+          </Text>
+
+        
+            <Text fontSize={"15px"} textAlign={"left"} width={"100%"}>
               Permission settings let you control who can view or edit pages,
               keeping information private.
             </Text>
-          </CardFooter>
+       
         </Card>
       </Flex>
-      <Text fontWeight={"medium"} fontSize={{
-            base: "2xl",
-            sm: "2xl",
-            md: "3xl",
-            lg: "3xl",
-            xl: "4xl",
-            "2xl": "4xl",
-          }} mt={{
-          base: "450px",
-          sm: "400px",
-          md: "380px",
-          lg:"50px",
+      <Text
+        fontWeight={"medium"}
+        fontSize={{
+          base: "2xl",
+          sm: "2xl",
+          md: "3xl",
+          lg: "3xl",
+          xl: "4xl",
+          "2xl": "4xl",
+        }}
+        mt={{
+          base: "50px",
+          sm: "50px",
+          md: "1px",
+          lg: "20px",
           xl: "50px",
           "2xl": "50px",
-        }}>
+        }}
+        
+        width={"95%"} margin={"auto"}
+      >
         Use Confluence with your favorite apps
       </Text>
-      <Text fontWeight={"normal"} fontSize={{
-            base: "2xl",
-            sm: "2xl",
-            md: "2xl",
-            lg: "2xl",
-            xl: "2xl",
-            "2xl": "2xl",
-          }} mb={"20px"} mt={"20px"}>
+      <Text
+        fontWeight={"normal"}
+        fontSize={{
+          base: "20px",
+          sm: "20px",
+          md: "20px",
+          lg: "20px",
+          xl: "20px",
+          "2xl": "20px",
+        }}
+        width={"95%"} margin={"auto"}
+        mb={"20px"}
+        mt={"20px"}
+      >
         With 3000+ integrations, we’re sure you’ll find the right tool for the
         job.
       </Text>
@@ -845,9 +958,7 @@ const Confluence = () => {
           xl: "repeat(4, 1fr)",
           "2xl": "repeat(4, 1fr)",
         }}
-        gap='4'
-        alignItems={"center"}
-        justifyContent={"center"}
+        gap="4"
         height={{
           base: "90%",
           sm: "90%",
@@ -859,112 +970,163 @@ const Confluence = () => {
         p="3"
         width={"75%"}
         margin={"auto"}
-       
       >
-        <Box
-          boxShadow="lg"
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
-            height={"90px"}
+            height={"75px"}
+            width={"80%"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:c5c9c69d-d6ce-43d2-98f6-5e0fe0f2498e/logos-Jira-blue.svg?cdnVersion=1265"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
-            height={"80px"}
+            height={"68px"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:b30cea8b-b00c-4d2d-af70-1b75d7a554ce/trello-logo.svg?cdnVersion=1263"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
-            height={"80px"}
+            height={"75px"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:fabfffaa-4eff-4e7f-a763-a29f5de3c021/Slack_RGB.svg?cdnVersion=1265"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+         boxShadow={isHovered ? "xl" : "md"}
+         transition="box-shadow 0.3s ease"
+         onMouseEnter={() => setIsHovered(true)}
+         onMouseLeave={() => setIsHovered(false)}
+         cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
             height={"80px"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:cf215f9c-fbe5-4449-84fa-cafb47ca76b8/Microsoft_Teams_Logo_2x.png?cdnVersion=1265"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
-            height={"80px"}
+             height={"75px"}
+             width={"80%"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:716ebd30-7743-4e96-a32b-621be8de86af/dropbox.svg?cdnVersion=1265"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+         boxShadow={isHovered ? "xl" : "md"}
+         transition="box-shadow 0.3s ease"
+         onMouseEnter={() => setIsHovered(true)}
+         onMouseLeave={() => setIsHovered(false)}
+         cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
-            height={"80px"}
+            height={"80%"}
+            width={"70%"}
+            p="4"
+            src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:3a696f17-0629-4a92-895b-cdaf3fdd3d08/figma-logo-full.svg?cdnVersion=1265"
+          />
+        </Flex>
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          height="100px"
+          width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <Image
+            height={"75px"}
+            width={"80%"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:b90ddb4c-5cb6-48bd-9661-0feaa78a703d/google_drive_wordmark.svg?cdnVersion=1265"
           />
-        </Box>
-        <Box
-          boxShadow="lg"
+        </Flex>
+        <Flex
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
           rounded="md"
           bg="white"
           height="100px"
           width={"250px"}
-        >
-          <Image
-            height={"80px"}
-            p="4"
-            src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:b90ddb4c-5cb6-48bd-9661-0feaa78a703d/google_drive_wordmark.svg?cdnVersion=1265"
-          />
-        </Box>
-        <Box
-          boxShadow="lg"
-          rounded="md"
-          bg="white"
-          height="100px"
-          width={"250px"}
+          alignItems={"center"}
+          justifyContent={"center"}
         >
           <Image
             height={"80px"}
             p="4"
             src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:61dc7b6e-29f5-4a55-9316-e5662d82462d/box-logo.svg?cdnVersion=1265"
           />
-        </Box>
+        </Flex>
       </Grid>
       <Flex
         height={{
@@ -975,7 +1137,6 @@ const Confluence = () => {
           xl: "20%",
           "2xl": "300px",
         }}
-        
         width={{
           base: "90%",
           sm: "75%",
@@ -993,38 +1154,46 @@ const Confluence = () => {
           "2xl": "row",
         }}
         margin={"auto"}
-        boxShadow="lg"
+        boxShadow={isHovered ? "xl" : "md"}
+        transition="box-shadow 0.3s ease"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        cursor="pointer"
         rounded="md"
         mt="50px"
       >
         <Box
-         
-         width={{
-          base: "100%",
-          sm: "100%",
-          md: "75%",
-          lg: "75%",
-          xl: "60%",
-          "2xl": "75%",
-        }}
-        
+          width={{
+            base: "100%",
+            sm: "100%",
+            md: "75%",
+            lg: "75%",
+            xl: "60%",
+            "2xl": "75%",
+          }}
           bg={"blue.100"}
           display={"flex"}
           alignItems={"center"}
           justifyContent={"center"}
           p="5"
-          
         >
-        <Image  src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:31d0af93-6279-456e-ba48-a75903141f5d/Logo_Redfin.svg?cdnVersion=1263" />
+          <Image src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:31d0af93-6279-456e-ba48-a75903141f5d/Logo_Redfin.svg?cdnVersion=1263" />
         </Box>
-        <Box width={{
-          base: "100%",
-          sm: "100%",
-          md: "75%",
-          lg: "75%",
-          xl: "60%",
-          "2xl": "75%",
-        }}   p="4" display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"}>
+        <Box
+          width={{
+            base: "100%",
+            sm: "100%",
+            md: "75%",
+            lg: "75%",
+            xl: "60%",
+            "2xl": "75%",
+          }}
+          p="4"
+          display={"flex"}
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
           <Text textAlign={"justify"} fontWeight={"normal"} fontSize={"xl"}>
             “Confluence is our linchpin for everything. ‘How do I set up my dev
             box?’ ‘How do I get my work going?’ Whatever they want to know, it’s
@@ -1050,145 +1219,181 @@ const Confluence = () => {
           </Text>
         </Box>
       </Flex>
-      <Text fontSize={{
-            base: "4xl",
-            sm: "4xl",
-            md: "4xl",
-            lg: "4xl",
-            xl: "4xl",
-            "2xl": "4xl",
-          }} fontWeight={"medium"} mb={"30px"} mt={"30px"}>
+      <Text
+       fontSize={{
+        base: "2xl",
+        sm: "2xl",
+        md: "3xl",
+        lg: "3xl",
+        xl: "4xl",
+        "2xl": "4xl",
+      }}
+        fontWeight={"medium"}
+        // mb={"30px"}
+        mt={"30px"}
+      >
         Resources to help you get started
       </Text>
 
       <Flex
-       width={{
-        base: "90%",
-        sm: "90%",
-        md: "98%",
-        lg: "98%",
-        xl: "98%",
-        "2xl": "90%",
-      }}
-    
-      margin={"auto"}
-      direction={{
-        base: "column",
-        sm: "column",
-        md: "column",
-        lg: "row",
-        xl: "row",
-        "2xl": "row",
-      }}
-      justifyContent="center"
-      alignItems="center"
-      height={{
-        base: "200px",
-        sm: "200px",
-        md: "280px",
-        lg: "500px",
-        xl: "500px",
-        "2xl": "500px",
-      }}
-      gap={{
-        base: "20px",
-        sm: "20px",
-        md: "30px",
-        lg: "30px",
-        xl: "50px",
-        "2xl": "100px",
-      }}
-     textAlign={"center"}
-     mt={{
-      base: "610px",
-      sm: "600px",
-      md: "550px",
-      lg:"50px",
-      xl: "50px",
-      "2xl": "50px",
-    }} 
+        width={{
+          base: "90%",
+          sm: "90%",
+          md: "98%",
+          lg: "98%",
+          xl: "98%",
+          "2xl": "90%",
+        }}
+        margin={"auto"}
+        direction={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          xl: "row",
+          "2xl": "row",
+        }}
+        justifyContent="center"
+        alignItems="center"
+        height={{
+          base: "200px",
+          sm: "200px",
+          md: "280px",
+          lg: "500px",
+          xl: "500px",
+          "2xl": "500px",
+        }}
+        gap={{
+          base: "20px",
+          sm: "20px",
+          md: "30px",
+          lg: "30px",
+          xl: "50px",
+          "2xl": "100px",
+        }}
+        textAlign={"center"}
+        mt={{
+          base: "500px",
+          sm: "500px",
+          md: "440px",
+          lg: "10px",
+          xl: "10px",
+          "2xl": "10px",
+        }}
       >
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
-            md: "60%",
+            md: "40%",
             lg: "28%",
             xl: "25%",
             "2xl": "25%",
-          }} height={"450px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
+          }}
+          height={"350px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+         
             <Image
               height={"250px"}
               width={"100%"}
               src="https://wac-cdn.atlassian.com/misc-assets/webp-images/Conf_ProductTour_BlueDemoVideo.webp"
             />
-          </CardHeader>
-          
-            <Text fontWeight={"medium"} fontSize={"2xl"}>
-              Demos
-            </Text>
-          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+         
+
+          <Text fontWeight={"medium"} mt={"15px"} fontSize={"20px"} textAlign={"left"}>
+            Demos
+          </Text>
+            <Text fontSize={"17px"}  mt={"15px"} textAlign={"left"}>
               See Confluence in action and learn the basics.
             </Text>
-          </CardFooter>
+          
         </Card>
 
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
-            md: "60%",
+            md: "40%",
             lg: "28%",
             xl: "25%",
             "2xl": "25%",
-          }} height={"450px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
+          }}
+          height={"350px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+          
             <Image
               height={"250px"}
               width={"100%"}
               src="https://wac-cdn.atlassian.com/misc-assets/webp-images/Conf_ProductTour_BlueUseCases.webp"
             />
-          </CardHeader>
+         
+
+          <Text fontWeight={"medium"} fontSize={"20px"} mt={"15px"}  textAlign={"left"}>
+            Use Cases
+          </Text>
+
           
-            <Text fontWeight={"medium"} fontSize={"2xl"}>
-              Use Cases
-            </Text>
-          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+            <Text fontSize={"17px"}  mt={"15px"}  textAlign={"left"}>
               Discover how Confluence can be shaped to meet your team’s needs.
             </Text>
-          </CardFooter>
+          
         </Card>
-        <Card width={{
+        <Card
+          width={{
             base: "90%",
             sm: "90%",
-            md: "60%",
+            md: "40%",
             lg: "28%",
             xl: "25%",
             "2xl": "25%",
-          }} height={"450px"} boxShadow="md" rounded="md" bg="white" p={"10px"}>
-          <CardHeader>
+          }}
+          height={"350px"}
+          boxShadow={isHovered ? "xl" : "md"}
+          transition="box-shadow 0.3s ease"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          cursor="pointer"
+          rounded="md"
+          bg="white"
+          p={"10px"}
+        >
+          
             <Image
               height={"250px"}
               width={"100%"}
               src="https://wac-cdn.atlassian.com/misc-assets/webp-images/Conf_ProductTour_BlueBestPractices.webp"
             />
-          </CardHeader>
-          
-            <Text fontWeight={"medium"} fontSize={"2xl"}>
-              Best practices
-            </Text>
          
-          <CardFooter>
-            <Text fontSize={"xl"}>
+
+          <Text fontWeight={"medium"} fontSize={"20px"}  mt={"15px"}  textAlign={"left"}>
+            Best practices
+          </Text>
+
+         
+            <Text fontSize={"17px"}  mt={"15px"}  textAlign={"left"}>
               Learn how to get the most out of Confluence.
             </Text>
-          </CardFooter>
+         
         </Card>
       </Flex>
     </Box>
+    // )}   
   );
 };
 
