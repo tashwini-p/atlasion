@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import {useAppStore} from "../zustand/appStore"
+import HomeIcon from '@mui/icons-material/Home';
+import { useNavigate } from 'react-router-dom';
 
 
 const AppBar = styled(MuiAppBar, {
@@ -64,6 +66,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -90,6 +93,10 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleHome=()=>{
+    navigate("/");
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -198,7 +205,14 @@ export default function Navbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
+          <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              onClick={handleHome}
+            >  
+              <HomeIcon />
+            </IconButton>
             <IconButton
               size="large"
               edge="end"
@@ -208,6 +222,7 @@ export default function Navbar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
+              
               <AccountCircle />
             </IconButton>
           </Box>

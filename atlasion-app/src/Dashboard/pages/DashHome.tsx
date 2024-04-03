@@ -7,13 +7,13 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import '../styles/dash.css';
-import StorefrontIcon from '@mui/icons-material/Storefront';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import AccordionDash from "../components/AccordionDash";
 import BarChart from "../charts/BarChart";
 import CountUp from 'react-countup';
-
+import PublicIcon from '@mui/icons-material/Public';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const DashHome = () => {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -61,21 +61,21 @@ const DashHome = () => {
                 <Stack spacing={2} direction={{xs: 'column', sm: 'column', md:'column'}}>
                 <Card className="cardGradientLight" sx={{ maxWidth: 345 }}>
                     <Stack direction={"row"}>
-                      <div className="iconStyle"><StorefrontIcon/></div>
+                      <div className="iconStyle"><PublicIcon/></div>
                       <div className="paddingAll">
-                        <span className="priceTitle">$203K</span>
+                        <span className="priceTitle">120+</span>
                         <br />
-                        <span className="priceSubTitle">Total Income</span>
+                        <span className="priceSubTitle">Countries Reached</span>
                       </div>
                     </Stack>
                   </Card>
                   <Card className="cardGradientLight" sx={{ maxWidth: 345 }}>
                     <Stack direction={"row"}>
-                      <div className="iconStyle"><StorefrontIcon/></div>
+                      <div className="iconStyle"><PeopleAltIcon/></div>
                       <div className="paddingAll">
-                        <span className="priceTitle">$203K</span>
+                        <span className="priceTitle">8M+</span>
                         <br />
-                        <span className="priceSubTitle">Total Income</span>
+                        <span className="priceSubTitle">Users</span>
                       </div>
                     </Stack>
                   </Card>
