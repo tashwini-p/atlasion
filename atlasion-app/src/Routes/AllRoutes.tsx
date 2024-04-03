@@ -7,6 +7,7 @@ import JiraServiceManagement from '../Jira Service Management/JiraServiceManagem
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { Confluence } from '../confluence/Confluence'
+import { Atlas } from '../atlas/Atlas'
 
 
 const AllRoutes = () => {
@@ -24,6 +25,9 @@ const AllRoutes = () => {
         } />
         <Route path="/confluence" element={
             <ChakraProvider><Confluence/></ChakraProvider>
+        } />
+        <Route path="/atlas" element={
+          <ChakraProvider><Atlas/></ChakraProvider>
         } />
         <Route
           path="/jiraServiceManagement"

@@ -4,35 +4,50 @@ import {
   Flex,
   Image,
   Text,
- 
   Card,
- 
- 
   Link,
-  
   Grid,
 
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-
 import {NewCard} from "../confluence/NewCard"
+import { useState } from "react";
+import { CardInfo } from "../Utils/interfaces";
+
 
 const Confluence = () => {
+  
   const [isHovered, setIsHovered] = useState<boolean>(false);
- 
+  const images: string[] = [
+    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-create-a-page.webp",
+    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-share-it-with-your-team.webp",
+    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-organize-your-work.webp",
+  ];
+
+  const cards: CardInfo[] = [
+    {
+      id: 1,
+      content: "Start with Page",
+      description:
+        "Plan projects, take notes, and brainstorm. Let AI write your first draft.",
+    },
+    {
+      id: 2,
+      content: "Share with your teams",
+      description:
+        "Invite your teams to collaborate using real-time editing and inline comments.",
+    },
+    {
+      id: 3,
+      content: "Connect all your work",
+      description:
+        "Stay organized in dedicated workspaces, equipped with AI-powered search.",
+    },
+  ];
+
   return (
    
     <Box
-      // bg={{
-      //   base: "gray",
-      //   sm: "pink",
-      //   md: "red",
-      //   lg: "yellow",
-      //   xl: "cyan",
-      //   "2xl": "blue",
-      // }}
-      textAlign={"center"}
-      
+      textAlign={"center"} 
       bgGradient="linear(to-b, #b5d5ff, white,#e6fcff,white )"
     >
      
@@ -65,7 +80,7 @@ const Confluence = () => {
         >
           Get Confluence free
         </Button>
-        <NewCard/>
+        <NewCard images={images} cards={cards}/>
         </Box>
       <Box width={"95%"} margin={"auto"}>
         <Text fontSize={"20px"} m={"40px"} fontWeight={"normal"}>
@@ -179,7 +194,7 @@ const Confluence = () => {
           }}
           src="https://wac-cdn.atlassian.com/dam/jcr:0a7dd09c-7f87-4bc9-8b65-318b0a41efb8/twitter.svg"
         />
-        {/* <Image height={"150px"} width={"145px"} src="https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:475f41d8-45f4-48c9-a9b2-d78215ae4b16/nyt-n50.svg"/> */}
+     
         <Image
           height={{
             base: "60px",
@@ -201,7 +216,7 @@ const Confluence = () => {
         />
       </Flex>
       <Box>
-        {/* "6xl" */}
+       
         <Box width={"95%"} margin={"auto"}>
           <Text
             fontSize={{
@@ -259,7 +274,7 @@ const Confluence = () => {
             xl: "10px",
             "2xl": "10px",
           }}
-          // gap={"100px"}
+          
           justifyContent={"center"}
           alignItems={"center"}
         >
@@ -649,7 +664,7 @@ const Confluence = () => {
           p={"10px"}
         >
          
-            {/* <i className="fa-solid fa-building"></i> */}
+            
             <Box
              display={"flex"}
              alignItems={"center"}
@@ -810,10 +825,10 @@ const Confluence = () => {
       </Text>
       <Grid
         templateColumns={{
-          base: "repeat(1, 1fr)", // on smaller screens, each element takes one full row
-          sm: "repeat(2, 1fr)", // on small screens and above, distribute elements in 2 columns
-          md: "repeat(2, 1fr)", // on medium screens and above, distribute elements in 3 columns
-          lg: "repeat(3, 1fr)", // on large screens and above, distribute elements in 6 columns
+          base: "repeat(1, 1fr)", 
+          sm: "repeat(2, 1fr)", 
+          md: "repeat(2, 1fr)", 
+          lg: "repeat(3, 1fr)", 
           xl: "repeat(4, 1fr)",
           "2xl": "repeat(4, 1fr)",
         }}
@@ -1088,7 +1103,7 @@ const Confluence = () => {
         "2xl": "4xl",
       }}
         fontWeight={"medium"}
-        // mb={"30px"}
+       
         mt={"30px"}
       >
         Resources to help you get started
