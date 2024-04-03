@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import {
   Box,
   Flex,
@@ -35,10 +35,30 @@ import logo from "../../assets/HomePageIcon/WebsiteLogo.png";
 import { NavProduct } from "./Product";
 import { SolutionPage } from "./SolutionPage";
 import { ResourcePage } from "./ResourcesPage";
+import { useAuth } from "../../AuthContext/Auth";
+import {  useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const Navbar: React.FC = () => {
+  const { handleLogout, userFullDetails} = useAuth();
   const { isOpen, onToggle } = useDisclosure();
+  const navigate =useNavigate();
 
+  const firstCharacterOfName = userFullDetails.firstName.charAt(0).toUpperCase() + userFullDetails.lastName.charAt(0).toUpperCase();
+  const OpenLoginPage=()=>{
+    navigate("/logIn");
+  }
+  
+  const handleLOGOUT=()=>{
+    handleLogout();
+  }
+
+
+  const HomePageReturn=()=>{
+    navigate("/")
+  }
+
+ console.log(userFullDetails);
   return (
     <>
       <Box
@@ -74,32 +94,35 @@ export const Navbar: React.FC = () => {
               />
             </Flex>
             <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+             
               <Img
+                onClick={HomePageReturn}
                 src={logo}
                 h={["1rem", "3rem"]}
                 mt={0}
                 w={["5rem", "10rem"]}
                 ml={[5, 9]}
               />
+              
               <Flex display={{ base: "none", md: "flex" }} ml={10}>
                 <DesktopNav />
               </Flex>
             </Flex>
-            <Button
-              as={"a"}
+            {
+              userFullDetails.email==""||null?<Button
+              onClick={OpenLoginPage}
               display={{ base: "none", md: "inline-flex" }}
               fontSize={"sm"}
               fontWeight={600}
               cursor={"pointer"}
               color={"white"}
               bg={"crimson"}
-              href={"#"}
               _hover={{
                 bg: "red.600",
               }}
             >
               Sign Up
-            </Button>
+            </Button>:
             <Menu>
               <MenuButton
                 as={Button}
@@ -114,7 +137,7 @@ export const Navbar: React.FC = () => {
                 // _hover={"none"}
                 // _active={"none"}
               >
-                <Text>DG</Text>
+                <Text>{firstCharacterOfName}</Text>
               </MenuButton>
               <MenuList p={0}>
                 <Flex bg={"#172B4D"}>
@@ -123,7 +146,7 @@ export const Navbar: React.FC = () => {
                     ml={2}
                     h={"2.3rem"}
                     w={"2.3rem"}
-                    src={"https://avatars.dicebear.com/api/male/username.svg"}
+                    src={"https://i.pinimg.com/originals/07/33/ba/0733ba760b29378474dea0fdbcb97107.png"}
                   />
                   <Box ml={2} mt={2} fontSize={"0.9rem"} color={"white"}>
                     <p
@@ -133,7 +156,7 @@ export const Navbar: React.FC = () => {
                         paddingRight: "0.3rem",
                       }}
                     >
-                      Username
+                      {userFullDetails.firstName}
                     </p>
                     <p
                       style={{
@@ -142,16 +165,17 @@ export const Navbar: React.FC = () => {
                         paddingRight: "0.3rem",
                       }}
                     >
-                      anujkshatriya82@gmail.com
+                      {userFullDetails.email}
                     </p>
                   </Box>
                 </Flex>
                 <MenuItem>Switch Account</MenuItem>
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>Licenses</MenuItem>
-                <MenuItem>Logout</MenuItem>
+                <MenuItem onClick={handleLOGOUT}>Logout</MenuItem>
               </MenuList>
             </Menu>
+           }
           </Flex>
           <Collapse in={isOpen} animateOpacity>
             <MobileNav />
@@ -369,23 +393,24 @@ const NAV_ITEMS = [
   },
 ];
 
-// interface LoginData {
-//   email: string;
-//   password: string;
-// }
+interface LoginData {
+  email: string;
+  password: string;
+}
 
-// interface SignupData {
-//   email: string;
-//   password: string;
-//   username: string;
-//   firstName: string;
-//   lastName: string;
-//   age: number;
-//   organization: string;
-// }
+interface SignupData {
+  email: string;
+  password: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+  age: number;
+  organization: string;
+}
 
 export const LoginPage: React.FC = () => {
   const [isLoginView, setIsLoginView] = useState(true);
+
 
   const switchToSignup = () => {
     setIsLoginView(false);
@@ -401,18 +426,20 @@ export const LoginPage: React.FC = () => {
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
-      background="linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7))"
+      bg={"blue.400"}
+      // background="linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7))"
       position="relative"
       overflow="hidden"
-      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+      boxShadow="77px 4px 18px rgba(8, 8, 8, 0.2)" 
     >
       <Flex
+        boxShadow="0 4px 12px rgba(0, 0, 4, 0.2)" 
         flexDirection="column"
         alignItems="center"
         bg="white"
         p={8}
         borderRadius="md"
-        boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+        //boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
       >
         <img
           src={logo}
@@ -437,28 +464,50 @@ export const LoginPage: React.FC = () => {
 };
 
 const LoginForm: React.FC = () => {
-  const handleLogin = () => {
-    // Logic for handling login
-  };
+  const init:LoginData={
+    email:"",
+    password:"",
+  }
+  const { login } = useAuth();
 
+ const[userData,setUserData]=useState<LoginData>(init);
+
+ 
+  
+  const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
+    let input=e.target;
+    let name=input.name;
+    let value= input.value;
+    setUserData({...userData,[name]:value});
+  }
+
+  const handleSubmit = async () => {
+    console.log(userData);
+    try {
+      await login(userData);
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Stack spacing={4} w={"sm"} maxW={"sm"}>
       <FormControl id="email">
         <FormLabel>Email address</FormLabel>
-        <Input type="email" variant="filled" />
+        <Input type="email" variant="filled" name="email" onChange={handleChange} value={userData.email}/>
       </FormControl>
       <FormControl id="password">
         <FormLabel>Password</FormLabel>
-        <Input type="password" variant="filled" />
+        <Input type="password" variant="filled" name="password" onChange={handleChange} value={userData.password}/>
       </FormControl>
       <Stack spacing={6}>
         <Checkbox>Remember me</Checkbox>
         <Button
+          onClick={handleSubmit}
           bg={"#0755D6"}
           variant={"solid"}
           color="white"
           _hover={{ bg: "blue" }}
-          onClick={handleLogin}
         >
           Sign in
         </Button>
@@ -468,42 +517,78 @@ const LoginForm: React.FC = () => {
 };
 
 const SignupForm: React.FC = () => {
-  const handleSignup = () => {
-    // Logic for handling signup
-  };
+ 
+  const {setUserFullDetails} = useAuth();
 
+ const init:SignupData={
+    "email": "",
+    "password":"",
+    "username": "",
+    "firstName": "",
+    "lastName": "",
+    "age": 0,
+    "organization": "",
+ }
+
+  const[userData,setUserData]=useState<SignupData>(init);
+  const navigate =useNavigate();
+  
+  const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
+    let input=e.target;
+    let name=input.name;
+    let value= input.value;
+    setUserData({...userData,[name]:value});
+  }
+  
+  const handleSignup = async (userData: SignupData) => {
+    console.log(userData);
+    try {
+      const response = await axios.post('https://atlasion.onrender.com/register', userData);
+      console.log(response.data);
+      console.log(response.data.user)
+      setUserFullDetails(response.data.user);
+      navigate("/")
+    } catch (error) {
+      console.error('Registration failed:', error);
+      throw new Error('Registration failed');
+    }
+  };
   return (
-    <Stack spacing={4} w={"sm"} maxW={"sm"}>
+    <Stack spacing={2} w={"sm"} maxW={"sm"} mt={-2}>
       <FormControl id="signup-email">
         <FormLabel>Email address</FormLabel>
-        <Input type="email" variant="filled" />
+        <Input type="email" variant="filled" name="email" onChange={handleChange} value={userData.email}/>
       </FormControl>
       <FormControl id="signup-username">
         <FormLabel>Username</FormLabel>
-        <Input type="text" variant="filled" />
+        <Input type="text" variant="filled" name="username" onChange={handleChange} value={userData.username}/>
+      </FormControl>
+      <FormControl id="signup-password">
+        <FormLabel>Password</FormLabel>
+        <Input type="password" variant="filled" name="password" onChange={handleChange} value={userData.password}/>
       </FormControl>
       <FormControl id="signup-first-name">
         <FormLabel>First Name</FormLabel>
-        <Input type="text" variant="filled" />
+        <Input type="text" variant="filled" name="firstName" onChange={handleChange} value={userData.firstName}/>
       </FormControl>
       <FormControl id="signup-last-name">
         <FormLabel>Last Name</FormLabel>
-        <Input type="text" variant="filled" />
+        <Input type="text" variant="filled" name="lastName" onChange={handleChange} value={userData.lastName}/>
       </FormControl>
       <FormControl id="signup-age">
         <FormLabel>Age</FormLabel>
-        <Input type="number" variant="filled" />
+        <Input type="number" variant="filled" name="age" onChange={handleChange} value={userData.age}/>
       </FormControl>
       <FormControl id="signup-organization">
         <FormLabel>Organization</FormLabel>
-        <Input type="text" variant="filled" />
+        <Input type="text" variant="filled" name="organization" onChange={handleChange} value={userData.organization}/>
       </FormControl>
       <Button
         bg={"#0755D6"}
         variant={"solid"}
         _hover={{ bg: "blue" }}
         color={"white"}
-        onClick={handleSignup}
+        onClick={() => handleSignup(userData)}
       >
         Sign up
       </Button>

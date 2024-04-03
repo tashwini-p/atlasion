@@ -8,11 +8,11 @@ POST https://atlasion.onrender.com/register
 Content-Type: application/json
 
    {
-      "username": "codingNinja",
-      "password": "code456",
-      "email": "codingninja@example.com",
-      "firstName": "Noah",
-      "lastName": "Hernandez",
+      "username": "Admin",
+      "password": "Admin@123",
+      "email": "Admin123@example.com",
+      "firstName": "AryanKumar",
+      "lastName": "Bhadhoriya",
       "age": 28
     }
 
