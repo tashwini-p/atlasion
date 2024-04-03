@@ -1,34 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-
-const NewCard: React.FC = () => {
-  const images = [
-    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-create-a-page.webp",
-    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-share-it-with-your-team.webp",
-    "https://wac-cdn.atlassian.com/misc-assets/webp-images/confluence-organize-your-work.webp",
-  ];
-
-  const cards = [
-    {
-      id: 1,
-      content: "Start with Page",
-      description:
-        "Plan projects, take notes, and brainstorm. Let AI write your first draft.",
-    },
-    {
-      id: 2,
-      content: "Share with your teams",
-      description:
-        "Invite your teams to collaborate using real-time editing and inline comments.",
-    },
-    {
-      id: 3,
-      content: "Connect all your work",
-      description:
-        "Stay organized in dedicated workspaces, equipped with AI-powered search.",
-    },
-  ];
-
+import { CardInfo } from "../Utils/interfaces";
+interface Props {
+  images: string[];
+  cards: CardInfo[];
+}
+const NewCard: React.FC<Props> = ({images,cards}) => {
+ 
   const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -44,6 +22,7 @@ const NewCard: React.FC = () => {
       direction={{ base: "column", md: "row" }}
       alignItems="center"
       mt={10}
+      gap={"40px"}
       justifyContent="space-evenly"
       height={"auto"}
       width={{
@@ -74,25 +53,22 @@ const NewCard: React.FC = () => {
             w={{ base: "100%", md: "auto" }}
             maxW={{ base: "100%", md: "400px" }}
           >
-            <Text fontSize="xl">{card.content}</Text>
-            <Text  textAlign="left" mt={2}>{card.description}</Text>
+            <Text fontWeight={"medium"} fontSize="2xl">{card.content}</Text>
+            <Text fontSize="17px" textAlign="left" mt={2}>{card.description}</Text>
           </Box>
         ))}
       </Flex>
-      <Box ml={{ base: 0, md: 4 }} w={{ base: "100%", md: "600px" }}>
+      <Box  w={{ sm: "90%",
+        md: "95%",
+        lg: "95%",
+        xl: "95%",
+        "2xl": "95%", }}>
         <Image
           src={images[currentCardIndex]}
           alt={`Image ${currentCardIndex}`}
           backgroundPosition={"center"}
           w="100%"
-          h={{
-            base: "90%",
-            sm: "90%",
-            md: "95%",
-            lg: "95%",
-            xl: "95%",
-            "2xl": "95%",
-          }}
+          
         />
       </Box>
     </Flex>
