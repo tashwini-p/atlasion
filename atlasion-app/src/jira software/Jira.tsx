@@ -5,11 +5,11 @@ import '@fontsource-variable/open-sans';
 const Jira: React.FC = () => {
   return (
     <>
-          {/* <Container maxW={'7xl'}  bg='pink'> */}
+       
     <Box bg='rgb(9,30,66)' w={'100%'} p={4} color='white' marginTop={40} height={500} display='flex'>
-      {/* Contents */}
+     
 
-      <Flex direction="column" justify="center" marginLeft={150} fontSize={22} width={600}  >
+      <Flex direction="column" justify="center" marginLeft={100} fontSize={22} width={600}  >
         <h1 style={{fontFamily:"revert-layer"}}>Move fast, stay aligned,<br /> and build better - <br /> together</h1>
         <h5 style={{fontFamily:"revert-layer",marginTop:"-10px"}} >The #1 software development tool used by agile teams</h5>
         <Button
@@ -26,7 +26,7 @@ const Jira: React.FC = () => {
 </Button>
 
       </Flex>
-      {/* </Container> */}
+    
       
       {/* Image */}
       <Flex justify="center" align="center"  >
@@ -219,7 +219,7 @@ const Jira: React.FC = () => {
    
 <Box   p={4}  marginTop={40} height={200} display='flex' width="40%" marginLeft={50}>
       {/* Contents */}
-      <Flex direction="column" justify="center" marginLeft={-100} fontSize={23}>
+      <Flex direction="column" justify="center" marginLeft={-100} fontSize={20}>
     <Text as="h1" whiteSpace="nowrap" fontFamily={'revert-layer'}>
       We believe in open relationships
     </Text>
