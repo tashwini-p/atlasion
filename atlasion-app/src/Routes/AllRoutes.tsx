@@ -8,6 +8,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Confluence } from '../confluence/Confluence'
 import { Atlas } from '../atlas/Atlas'
 import { Homepage } from '../HomePage/Pages/HomePage'
+import { LoginPage } from '../HomePage/Component/Navbar'
 
 const AllRoutes = () => {
   return (
@@ -18,6 +19,9 @@ const AllRoutes = () => {
         } />
         <Route path="/jiraSoftware" element={
           <Jira/>
+        } />
+        <Route path="/logIn" element={
+          <ChakraProvider><LoginPage/></ChakraProvider>
         } />
         <Route path="/bitBucket" element={
           <BitBucket/>
