@@ -13,6 +13,7 @@ import {
   import tab_2_image from "../../assets/HomePageIcon/mid_tab2_image.png"
   import tab_3_image from "../../assets/HomePageIcon/mid_tab3_image.png"
   import jira_Product_discovered_logo from "../../assets/HomePageIcon/Jira-Product-Discovery_logo-mark.png"
+import { Link } from 'react-router-dom';
   
   
   interface FeatureProp{
@@ -70,26 +71,34 @@ import {
            description={"Work differently,together"} 
            />
           <Flex mt={7} flexDirection={"column"} rowGap={5}>
-          <Feature 
-           Product_name={"Jira Software"}
-           description={"Project and issue tracking"}
-           imageUrl={"https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"}
-           />
-           <Feature 
-           Product_name={"Confluence"}
-           description={"Content collaboration"}
-           imageUrl={"https://tse1.mm.bing.net/th?id=OIP.KK_wcCiud9ThyDfki_rKyAAAAA&pid=Api&P=0&h=180"}
-           />
-           <Feature 
-           Product_name={"Jira Service Management"}
-           description={"High-velocity ITSM"}
-           imageUrl={"https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"}
-           />
-           <Feature 
-           Product_name={"Trello"}
-           description={"Visual project management"}
-           imageUrl={"https://tse1.mm.bing.net/th?id=OIP.SuVu6-ExuplFN6WLChTKhQAAAA&pid=Api&P=0&h=180"}
-           />
+          <Link to={"/jiraSoftware"}>
+            <Feature
+             Product_name={"Jira Software"}
+             description={"Project and issue tracking"}
+             imageUrl={"https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"}
+             />
+          </Link>
+           <Link to={"/confluence"}>
+             <Feature
+             Product_name={"Confluence"}
+             description={"Content collaboration"}
+             imageUrl={"https://tse1.mm.bing.net/th?id=OIP.KK_wcCiud9ThyDfki_rKyAAAAA&pid=Api&P=0&h=180"}
+             />
+           </Link>
+           <Link to={"/jiraServiceManagement"}>
+             <Feature
+             Product_name={"Jira Service Management"}
+             description={"High-velocity ITSM"}
+             imageUrl={"https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"}
+             />
+           </Link>
+           <Link to={"/atlas"}>
+             <Feature
+             Product_name={"Atlas"}
+             description={"Teamwork directory"}
+             imageUrl={"https://attlasianmegamenuclone.vercel.app/logos-atlas-icon-gradient-blue.svg"}
+             />
+           </Link>
            </Flex>
           </Box>
           <Flex w={["70%","70%"]} >
@@ -148,11 +157,13 @@ import {
                        Product_title={"Enable your dev, IT ops, and business teams to deliver great service experiences"}
                        description={"Deliver at high Velocity"} 
                     />
-                     <Feature_1 
-                          Product_name={"Jira Service Management"}
-                          description={"High-velocity ITSM"}
-                          imageUrl={"https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"}
-                     />  
+                     <Link to={"/jiraServiceManagement"}>
+                       <Feature_1
+                            Product_name={"Jira Service Management"}
+                            description={"High-velocity ITSM"}
+                            imageUrl={"https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"}
+                       />
+                     </Link>
                      </Flex>
                </Box>
                <Flex w={["70%","70%"]} >
@@ -212,11 +223,13 @@ import {
            description={"Explore Open DevOps"} 
            />
           <Flex mt={7} flexDirection={"column"} rowGap={5}>
-          <Feature_2 
-           Product_name={"Jira Software"}
-           description={"Project and issue tracking"}
-           imageUrl={"https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"}
-           />
+          <Link to={"/jiraSoftware"}>
+            <Feature_2
+             Product_name={"Jira Software"}
+             description={"Project and issue tracking"}
+             imageUrl={"https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"}
+             />
+          </Link>
            <Feature_2 
            Product_name={"Jira Product Discovery"}
            description={"Prioritization and roadmapping"}
@@ -232,11 +245,13 @@ import {
            description={"Developer experience platform"}
            imageUrl={"https://cdn.worldvectorlogo.com/logos/atlassian-compass-1.svg"}
            />
-           <Feature_2 
-           Product_name={"Bitbucket"}
-           description={"Code & Cl/CD"}
-           imageUrl={"https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/44_Bitbucket_logo_logos-512.png"}
-           />
+           <Link to={"/bitBucket"}>
+             <Feature_2
+             Product_name={"Bitbucket"}
+             description={"Code & Cl/CD"}
+             imageUrl={"https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/44_Bitbucket_logo_logos-512.png"}
+             />
+           </Link>
            </Flex>
           </Box>
           <Flex w={["50%","70%"]}  >

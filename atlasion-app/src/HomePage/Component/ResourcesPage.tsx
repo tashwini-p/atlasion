@@ -5,8 +5,8 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 
 
 interface DataType {
-  title: String;
-  Data: String[];
+  title: string;
+  Data: string[];
 }
 
 export const ResourceData: React.FC<DataType> = ({ title, Data }) => {
@@ -101,13 +101,13 @@ export const ResourcePage = () => {
   );
 };
 
-export const Column1_Data: String[] = [
+export const Column1_Data: string[] = [
   "Atlassian University",
   "Atlassian Playbook",
   "Production Documentation",
   "Developer Resources",
 ];
-export const Column2_Data: String[] = [
+export const Column2_Data: string[] = [
   "Atlassian Community",
   "Atlassian Support",
   "Atlassian Migration Program",
@@ -115,7 +115,7 @@ export const Column2_Data: String[] = [
   "Partner Support",
   "Purchasing & Licensing",
 ];
-export const Column3_Data: String[] = [
+export const Column3_Data: string[] = [
   "About us",
   "Careers",
   "Work Life Blog",

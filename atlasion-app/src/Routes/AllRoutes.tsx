@@ -1,6 +1,5 @@
 
 import { Route, Routes } from 'react-router-dom'
-import { Navbar } from '../HomePage/Navbar'
 import Jira from '../jira software/Jira'
 import BitBucket from '../bitbucket/BitBucket'
 import JiraServiceManagement from '../Jira Service Management/JiraServiceManagement'
@@ -8,14 +7,14 @@ import JiraServiceManagement from '../Jira Service Management/JiraServiceManagem
 import { ChakraProvider } from '@chakra-ui/react'
 import { Confluence } from '../confluence/Confluence'
 import { Atlas } from '../atlas/Atlas'
-
+import { Homepage } from '../HomePage/Pages/HomePage'
 
 const AllRoutes = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={
-          <ChakraProvider><Navbar/></ChakraProvider>
+          <ChakraProvider><Homepage/></ChakraProvider>
         } />
         <Route path="/jiraSoftware" element={
           <Jira/>

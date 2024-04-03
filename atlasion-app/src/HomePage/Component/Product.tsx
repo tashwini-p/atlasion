@@ -3,6 +3,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaMap } from "react-icons/fa";
 import { IoCloudDoneSharp } from "react-icons/io5";
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface ProductCards {
   image_Url: string;
@@ -93,27 +94,33 @@ export function NavProduct() {
         </Box>
         <Flex flexDirection={"column"} rowGap={[2,7]}>
           <Grid templateColumns={["repeat(1,1fr)", "repeat(2,1fr)"]} rowGap={6}>
-            <ProductCard
-              image_Url={
-                "https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"
-              }
-              Product_name={"Jira Software"}
-              description={"Project and issue tracking"}
-            />
-            <ProductCard
-              image_Url={
-                "https://tse1.mm.bing.net/th?id=OIP.KK_wcCiud9ThyDfki_rKyAAAAA&pid=Api&P=0&h=180"
-              }
-              Product_name={"Confluence"}
-              description={"Content collaboration"}
-            />
-            <ProductCard
-              image_Url={
-                "https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"
-              }
-              Product_name={"Jira Service Management"}
-              description={"High-velocity ITSM"}
-            />
+            <Link to={"/jiraSoftware"}>
+              <ProductCard
+                image_Url={
+                  "https://tse1.mm.bing.net/th?id=OIP.3Xlbth8iI3LofCjgkU8cHwHaIC&pid=Api&P=0&h=180"
+                }
+                Product_name={"Jira Software"}
+                description={"Project and issue tracking"}
+              />
+            </Link>
+            <Link to={"/confluence"}>
+              <ProductCard
+                image_Url={
+                  "https://tse1.mm.bing.net/th?id=OIP.KK_wcCiud9ThyDfki_rKyAAAAA&pid=Api&P=0&h=180"
+                }
+                Product_name={"Confluence"}
+                description={"Content collaboration"}
+              />
+            </Link>
+            <Link to={"/jiraServiceManagement"}>
+              <ProductCard
+                image_Url={
+                  "https://www.scoopadmin.com/theme/assets/galleries/jira-servicedesk-logo.png"
+                }
+                Product_name={"Jira Service Management"}
+                description={"High-velocity ITSM"}
+              />
+            </Link>
             <ProductCard
               image_Url={
                 "https://tse1.mm.bing.net/th?id=OIP.SuVu6-ExuplFN6WLChTKhQAAAA&pid=Api&P=0&h=180"
