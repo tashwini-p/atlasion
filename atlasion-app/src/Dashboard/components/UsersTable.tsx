@@ -3,6 +3,8 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Modal from '@mui/material/Modal';
+import Skeleton from "@mui/material/Skeleton";
+import { Box } from '@mui/material';
 
 const url = 'https://atlasion.onrender.com/users';
 
@@ -16,23 +18,38 @@ interface UserData {
   username: string;
 }
 
+const LoadingSkeleton = () => (
+  <Box
+    sx={{
+      height: "max-content"
+    }}
+  >
+    {[...Array(10)].map(() => (
+      <Skeleton variant="rectangular" sx={{ my: 4, mx: 1 }} />
+    ))}
+  </Box>
+);
+
 const UsersTable: React.FC = () => {
   const [rows, setRows] = useState<UserData[]>([]);
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
   const [editRow, setEditRow] = useState<UserData | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
       .then((data: UserData[]) =>
-        setRows(
+        {setRows(
           data.map((user) => ({
             ...user,
             fullName: `${user.firstName} ${user.lastName}`,
           }))
-        )
+        );
+        setLoading(false);
+      }
       )
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
@@ -144,6 +161,10 @@ const UsersTable: React.FC = () => {
         pageSize={9}
         pageSizeOptions={[5, 9, 10, 100]}
         isRowSelectable={() => false}
+        components={{
+          LoadingOverlay: loading ? LoadingSkeleton : undefined
+        }}
+        loading={loading}
       />
       <Modal
         open={openModal}
