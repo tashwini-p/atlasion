@@ -111,7 +111,7 @@ const UsersTable: React.FC = () => {
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 100 },
     { field: 'lastName', headerName: 'Last name', width: 100 },
-    { field: 'fullName', headerName: 'Full Name', width: 150 },
+    { field: 'organization', headerName: 'Organization', width: 150 },
     { field: 'email', headerName: 'Email', width: 200 },
     { field: 'age', headerName: 'Age', type: 'number', width: 90 },
     { field: 'username', headerName: 'Username', width: 160 },
