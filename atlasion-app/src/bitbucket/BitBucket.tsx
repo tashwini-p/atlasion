@@ -1,9 +1,10 @@
 import { Box, Button, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 
+
 const BitBucket: React.FC = () => {
   return (
     <>
-  
+
     <Box  bg='rgb(222,235,255)'  p={4} color='black' height={500}  w={{base: "0em", // 0px
   sm: "30em", // ~480px. em is a relative unit and is dependant on the font size.
   md: "48em", // ~768px
@@ -87,9 +88,9 @@ const BitBucket: React.FC = () => {
     <Text as="p" fontSize={20} marginTop={-5}>This video demos a code change workflow using Jira Software and Bitbucket Pipelines. </Text>
     <Box marginTop={20}>
     <iframe width="1000px" height="500px" src="https://www.youtube.com/embed/kr2zkyxnhAk?si=OorHcIgFK7AbxW7R" 
-    title="YouTube video player" frameborder="0" 
+    title="YouTube video player"  
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    ></iframe>
     </Box>
   </Flex>
   
