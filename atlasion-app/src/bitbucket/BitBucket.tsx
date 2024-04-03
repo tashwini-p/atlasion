@@ -37,7 +37,7 @@ const BitBucket: React.FC = () => {
     {/* Text Content */}
     <Box width="50%">
       <Text as="h1" fontSize={24} marginTop={4} color='#ffffff'>Collaborate across multiple teams</Text>
-      <Text as="h4" marginBottom={4} color='#ffffff' fontSize={17}> Reduce context-switching by managing your Jira issues in Bitbucket with the built-in Jira UI. And when you include your issue key in commits, your Jira issue statuses update automatically.</Text>
+      <Text as="h4" marginBottom={4} color='#ffffff' fontSize={19}> Reduce context-switching by managing your Jira issues in Bitbucket with the built-in Jira UI. And when you include your issue key in commits, your Jira issue statuses update automatically.</Text>
       <Text as="h5" marginTop={20} fontSize={16}>Learn More</Text>
     
     </Box>
@@ -53,7 +53,7 @@ const BitBucket: React.FC = () => {
   <Image src='https://wac-cdn.atlassian.com/dam/jcr:573ed78d-0a62-4932-9c6c-4f3fab8d78d5/bitbucket-cloud-features-003_2x.png?cdnVersion=1512' height={400} width='60%'  />
     <Box width="50%" marginLeft={40}>
       <Text as="h1" marginTop={4} fontSize={24}>Ship quality code</Text>
-      <Text as="h4" marginBottom={4} fontSize={17}>Comprehensive code review features to help you find and fix bugs before you deploy. Review large diffs with ease, view third-party code reports, and open Jira tickets right from the PR screen.</Text>
+      <Text as="h4" marginBottom={4} fontSize={19}>Comprehensive code review features to help you find and fix bugs before you deploy. Review large diffs with ease, view third-party code reports, and open Jira tickets right from the PR screen.</Text>
       <Text as="h5" marginTop={20} fontSize={16}> Learn More</Text>
     
     </Box>
@@ -68,7 +68,7 @@ const BitBucket: React.FC = () => {
     {/* Text Content */}
     <Box width="50%">
       <Text as="h1" marginTop={4} color='#ffffff' fontSize={24}>Automate deployments</Text>
-      <Text as="h4" marginBottom={4} color='#ffffff'fontSize={17}>Use our built-in CI/CD tool, Bitbucket Pipelines, to create powerful, automated workflows. Or connect Bitbucket Cloud to on-prem CI/CD tools like Bamboo or Jenkins.</Text>
+      <Text as="h4" marginBottom={4} color='#ffffff'fontSize={19}>Use our built-in CI/CD tool, Bitbucket Pipelines, to create powerful, automated workflows. Or connect Bitbucket Cloud to on-prem CI/CD tools like Bamboo or Jenkins.</Text>
       <Text as="h5" marginTop={20} fontSize={16}>Learn More</Text>
     
     </Box>
@@ -218,14 +218,14 @@ boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"></Image>
   <Image src='https://wac-cdn.atlassian.com/dam/jcr:0731cc0f-d2b3-4107-83b6-def20f8dc7cd/Logo-Grey-Rappi_2x.png?cdnVersion=1512' height="30px" marginLeft={30} marginTop={100}  width={150}/>
 </Flex>
   </Box>
-  <Box bg='rgb(9,30,66)' w='50%' p={4} color='white' height={300} display='flex' alignItems="center" justifyContent="center" marginTop={-200} marginLeft={400}>
+  <Box bg='rgb(9,30,66)' w='70%' p={4} color='white' height={400} display='flex' alignItems="center" justifyContent="center" marginTop={-250} marginLeft={250}>
   {/* Contents */}
   <Flex width="80%" justifyContent="space-between" alignItems="center" direction='column'>
  
 
-      <Text as="h2" marginBottom={4}>“We’ve gone from one big-bang release every month to 10-20 production deployments per day. We also reduced the average development cycle time from 5.8 days to 2.9 days and the standard deviation from 19.8 days to 3.5 days.</Text>
-      <Text marginLeft={-450}>Roman Bugaev, CTO </Text>
-     <Image src='https://wac-cdn.atlassian.com/dam/jcr:4f9fb3e9-ccf7-4506-884b-d57ea8d83372/Logo-Carousel_001-Flo_2x.png?cdnVersion=1512' height={30} marginLeft={-550}></Image>
+      <Text as="h2" marginBottom={4} fontSize={33} marginLeft={-30}>“We’ve gone from one big-bang release every month to 10-20 production deployments per day. We also reduced the average development cycle time from 5.8 days to 2.9 days and the standard deviation from 19.8 days to 3.5 days.</Text>
+      <Text marginLeft={-700} fontSize={20} marginTop={50}>Roman Bugaev, CTO </Text>
+     <Image src='https://wac-cdn.atlassian.com/dam/jcr:4f9fb3e9-ccf7-4506-884b-d57ea8d83372/Logo-Carousel_001-Flo_2x.png?cdnVersion=1512' height={30} marginLeft={-850}></Image>
     
    
   
@@ -280,7 +280,7 @@ boxShadow="rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"></Image>
   <Flex width="80%" justifyContent="space-between" alignItems="center" flexDirection={'column'}>
  
       <Text as="h1" marginTop={-20} fontSize={36}>Take Bitbucket Cloud for a spin</Text>
-      <Button colorScheme='blue' bg="blue" width={130} height={40}  border={'none'}  color={'white'} borderRadius={5} fontSize={16} marginTop={20}>Start for free</Button>
+      <Button colorScheme='blue' bg="rgb(0,82,204)" width={130} height={40}  border={'none'}  color={'white'} borderRadius={5} fontSize={16} marginTop={20}>Start for free</Button>
 
     
 
