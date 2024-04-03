@@ -76,24 +76,31 @@ const JiraServiceManagement: React.FC = () => {
       </Text>
     </Box>
     <br />
-    <Flex justifyContent="center" alignItems="center" gap="40px">
+    <Flex wrap="wrap" justifyContent="center" alignItems="center" gap="40px">
       <Tabs variant="soft-rounded">
         <TabList justifyContent="center" alignItems="center" gap="40px">
-          <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
-            IT support
-          </Tab>
-          <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
-            Engineering support
-          </Tab>
-          <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
-            Employee support
-          </Tab>
-          <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
-            IT operations
-          </Tab>
-          <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
-            Customer service
-          </Tab>
+          <Flex
+            wrap="wrap"
+            justifyContent="center"
+            alignItems="center"
+            gap="40px"
+          >
+            <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
+              IT support
+            </Tab>
+            <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
+              Engineering support
+            </Tab>
+            <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
+              Employee support
+            </Tab>
+            <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
+              IT operations
+            </Tab>
+            <Tab borderRadius="50px" backgroundColor="#f7f8f9" padding="15px">
+              Customer service
+            </Tab>
+          </Flex>
         </TabList>
         <br />
         <br />
@@ -291,7 +298,7 @@ const JiraServiceManagement: React.FC = () => {
                       </svg>
                     </span>
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Manage requests from customers
+                      Manage requests from customers
                     </Text>
                   </ListItem>
                   <br />
@@ -302,15 +309,20 @@ const JiraServiceManagement: React.FC = () => {
                     alignItems="flex-start"
                   >
                     <span>
-                      <Image src= {EngineeringSupport3} height="30px"/>
+                      <Image src={EngineeringSupport3} height="30px" />
                     </span>
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Link requests to Jira Software issues
+                      Link requests to Jira Software issues
                     </Text>
                   </ListItem>
                 </UnorderedList>
                 <br />
-                <Flex justifyContent="center" alignItems="center" gap="40px" marginLeft='-150px'>
+                <Flex
+                  justifyContent="center"
+                  alignItems="center"
+                  gap="40px"
+                  marginLeft="-150px"
+                >
                   <Button
                     borderRadius="5px"
                     backgroundColor="#0052cc"
@@ -334,12 +346,12 @@ const JiraServiceManagement: React.FC = () => {
                 maxWidth="100%"
                 height="355px"
                 width="700px"
-                marginLeft='-150px'
+                marginLeft="-150px"
               />
             </Flex>
           </TabPanel>
           <TabPanel>
-          <Flex wrap="wrap">
+            <Flex wrap="wrap">
               <Flex direction="column">
                 <Heading
                   size="xl"
@@ -395,7 +407,7 @@ const JiraServiceManagement: React.FC = () => {
                       </svg>
                     </span>
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Ensure anyone can get help quickly
+                      Ensure anyone can get help quickly
                     </Text>
                   </ListItem>
                   <br />
@@ -405,9 +417,9 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                      <Image src={EmployeeSupport} height='25px' />
+                    <Image src={EmployeeSupport} height="25px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Empower people to self serve
+                      Empower people to self serve
                     </Text>
                   </ListItem>
                   <br />
@@ -430,12 +442,17 @@ const JiraServiceManagement: React.FC = () => {
                       </svg>
                     </span>
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Automate workflows
+                      Automate workflows
                     </Text>
                   </ListItem>
                 </UnorderedList>
                 <br />
-                <Flex justifyContent="center" alignItems="center" gap="40px" marginLeft='-150px'>
+                <Flex
+                  justifyContent="center"
+                  alignItems="center"
+                  gap="40px"
+                  marginLeft="-150px"
+                >
                   <Button
                     borderRadius="5px"
                     backgroundColor="#0052cc"
@@ -459,12 +476,12 @@ const JiraServiceManagement: React.FC = () => {
                 maxWidth="100%"
                 height="355px"
                 width="700px"
-                marginLeft='-150px'
+                marginLeft="-150px"
               />
             </Flex>
           </TabPanel>
           <TabPanel>
-          <Flex wrap="wrap" gap='50px'>
+            <Flex wrap="wrap" gap="50px">
               <Flex direction="column">
                 <Heading
                   size="xl"
@@ -489,9 +506,9 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                    <Image src={ITOperation} height='25px'/>
+                    <Image src={ITOperation} height="25px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Automate change requests
+                      Automate change requests
                     </Text>
                   </ListItem>
                   <br />
@@ -501,9 +518,9 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                      <Image src={ITOperation2} height='25px' />
+                    <Image src={ITOperation2} height="25px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Deploy with confidence
+                      Deploy with confidence
                     </Text>
                   </ListItem>
                   <br />
@@ -513,14 +530,20 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                    <Image src={ITOperation3} height='20px' />
+                    <Image src={ITOperation3} height="20px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Investigate, resolve, and prevent <br />incidents
+                      Investigate, resolve, and prevent <br />
+                      incidents
                     </Text>
                   </ListItem>
                 </UnorderedList>
                 <br />
-                <Flex justifyContent="center" alignItems="center" gap="40px" marginLeft='-50px'>
+                <Flex
+                  justifyContent="center"
+                  alignItems="center"
+                  gap="40px"
+                  marginLeft="-50px"
+                >
                   <Button
                     borderRadius="5px"
                     backgroundColor="#0052cc"
@@ -544,12 +567,12 @@ const JiraServiceManagement: React.FC = () => {
                 maxWidth="100%"
                 height="355px"
                 width="700px"
-                marginLeft='-150px'
+                marginLeft="-150px"
               />
             </Flex>
           </TabPanel>
           <TabPanel>
-          <Flex wrap="wrap" gap='50px'>
+            <Flex wrap="wrap" gap="50px">
               <Flex direction="column">
                 <Heading
                   size="xl"
@@ -574,9 +597,9 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                    <Image src={CustomerService1} height='25px'/>
+                    <Image src={CustomerService1} height="25px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Customize your help center
+                      Customize your help center
                     </Text>
                   </ListItem>
                   <br />
@@ -586,9 +609,9 @@ const JiraServiceManagement: React.FC = () => {
                     display="flex"
                     alignItems="flex-start"
                   >
-                      <Image src={CustomerService3} height='25px' />
+                    <Image src={CustomerService3} height="25px" />
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Capture relevant customer <br /> information
+                      Capture relevant customer <br /> information
                     </Text>
                   </ListItem>
                   <br />
@@ -599,15 +622,20 @@ const JiraServiceManagement: React.FC = () => {
                     alignItems="flex-start"
                   >
                     <span>
-                      <Image src= {EngineeringSupport3} height="30px"/>
+                      <Image src={EngineeringSupport3} height="30px" />
                     </span>
                     <Text fontSize="20px" lineHeight="28px" color="#44546f">
-                    Link requests to Jira Software issues
+                      Link requests to Jira Software issues
                     </Text>
                   </ListItem>
                 </UnorderedList>
                 <br />
-                <Flex justifyContent="center" alignItems="center" gap="40px" marginLeft='-50px'>
+                <Flex
+                  justifyContent="center"
+                  alignItems="center"
+                  gap="40px"
+                  marginLeft="-50px"
+                >
                   <Button
                     borderRadius="5px"
                     backgroundColor="#0052cc"
@@ -631,7 +659,7 @@ const JiraServiceManagement: React.FC = () => {
                 maxWidth="100%"
                 height="355px"
                 width="700px"
-                marginLeft='-150px'
+                marginLeft="-150px"
               />
             </Flex>
           </TabPanel>
@@ -642,7 +670,7 @@ const JiraServiceManagement: React.FC = () => {
     <br />
     <br />
     <br />
-    <Flex
+    <Flex wrap='wrap'
       justifyContent="center"
       alignItems="center"
       gap="50px"
@@ -687,7 +715,7 @@ const JiraServiceManagement: React.FC = () => {
       </Heading>
       <br />
       <br />
-      <Flex justifyContent="center" alignItems="center" gap="40px">
+      <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="40px">
         <Button
           fontSize="17px"
           fontWeight="400"
@@ -718,9 +746,9 @@ const JiraServiceManagement: React.FC = () => {
       </Flex>
       <br />
       <br />
-      <Flex justifyContent="center" gap="60px">
-        <Flex direction="column" justifyContent="start">
-          <Flex justifyContent="center" alignItems="center" gap="10px">
+      <Flex wrap='wrap' justifyContent="center" gap="60px">
+        <Flex wrap='wrap' direction="column" justifyContent="start">
+          <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="10px">
             <Box
               height="40px"
               width="40px"
@@ -771,7 +799,7 @@ const JiraServiceManagement: React.FC = () => {
         Teams across the world rely on Jira Service Management
       </Heading>
       <br />
-      <Flex justifyContent="center" alignItems="center" gap="10px">
+      <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="10px">
         <Link fontSize="16px" color="white" marginTop="-5px">
           Explore customer stories
         </Link>
@@ -788,7 +816,7 @@ const JiraServiceManagement: React.FC = () => {
           ></path>
         </svg>
       </Flex>
-      <Flex justifyContent="center" gap="25px">
+      <Flex wrap='wrap' justifyContent="center" gap="25px">
         <Image
           src="https://wac-cdn.atlassian.com/dam/jcr:0798ec5f-5136-4c42-b2ce-ee94b9e1d8fb/jsm-teamwork.svg?cdnVersion=1286"
           height="689px"
@@ -822,7 +850,7 @@ const JiraServiceManagement: React.FC = () => {
           <Text color="white" fontSize="12px" fontWeight="500">
             JOSE LUIS LIZÁRRAGA CASTRO, IT SUPPORT ENGINEER, ENGIE MEXICO
           </Text>
-          <Flex justifyContent="center" alignItems="center" gap="20px">
+          <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="20px">
             <Heading fontSize="40px" fontWeight="500" color="white">
               67%
             </Heading>
@@ -831,7 +859,7 @@ const JiraServiceManagement: React.FC = () => {
               Management
             </Text>
           </Flex>
-          <Flex justifyContent="center" alignItems="center" gap="20px">
+          <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="20px">
             <Heading fontSize="40px" fontWeight="500" color="white">
               200
             </Heading>
@@ -839,14 +867,14 @@ const JiraServiceManagement: React.FC = () => {
               hours saved a month with report automation
             </Text>
           </Flex>
-          <Flex justifyContent="center" alignItems="center" gap="20px">
+          <Flex wrap='wrap' justifyContent="center" alignItems="center" gap="20px">
             <Heading fontSize="40px" fontWeight="500" color="white">
               100%
             </Heading>
             <Text color="white">SLA compliance</Text>
           </Flex>
         </Flex>
-      </Flex>
+      </Flex><br />
       <Flex
         wrap="wrap"
         justifyContent="center"
@@ -1214,12 +1242,13 @@ const JiraServiceManagement: React.FC = () => {
     <br />
     <br />
     <br />
-    <Flex background="linear-gradient(180deg, #fff, #deebff);" gap="20px">
+    <Flex wrap='wrap' background="linear-gradient(180deg, #fff, #deebff);" gap="20px">
       <Image
         src="https://wac-cdn.atlassian.com/dam/jcr:16647810-ab3b-4f93-b9f9-968c357b61a0/jsm-integrations-left.svg?cdnVersion=1325"
         marginBottom="30px"
       />
       <Flex
+      wrap='wrap'
         direction="column"
         justifyContent="center"
         alignItems="center"
@@ -1253,7 +1282,7 @@ const JiraServiceManagement: React.FC = () => {
           integrations to ensure Jira <br /> Service Management can be
           customized to fit your use case.
         </Text>
-        <Flex marginLeft="20px" gap="5px">
+        <Flex wrap='wrap' marginLeft="20px" gap="5px">
           <Link fontSize="16px" color="#0052cc" fontWeight="400">
             Explore the Marketplace
           </Link>
@@ -1265,7 +1294,7 @@ const JiraServiceManagement: React.FC = () => {
         height="200px"
       />
     </Flex>
-    <Flex position="relative" textAlign="center" color="white">
+    <Flex wrap='wrap' position="relative" textAlign="center" color="white">
       <Image src="https://wac-cdn.atlassian.com/dam/jcr:810c8319-7fb0-4af4-a230-fd70f6669588/jsm-product-tour-footer-1800px.png?cdnVersion=1302" />
       <Heading
         fontSize="36px"
@@ -1278,6 +1307,7 @@ const JiraServiceManagement: React.FC = () => {
         Get started with Jira Service Management today
       </Heading>
       <Flex
+      wrap='wrap'
         position="absolute"
         top="70%"
         left="50%"
@@ -1292,7 +1322,7 @@ const JiraServiceManagement: React.FC = () => {
         >
           Try it free
         </Button>
-        <Flex gap="5px">
+        <Flex wrap='wrap' gap="5px">
           <Link
             fontSize="16px"
             color="white"
