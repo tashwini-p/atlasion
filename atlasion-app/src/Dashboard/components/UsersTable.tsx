@@ -157,7 +157,7 @@ const UsersTable: React.FC = () => {
       <DataGrid
         rows={rows}
         columns={columns}
-        //@ts-ignore
+        // @ts-ignore
         pageSize={9}
         pageSizeOptions={[5, 9, 10, 100]}
         isRowSelectable={() => false}

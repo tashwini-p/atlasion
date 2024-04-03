@@ -30,7 +30,6 @@ import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  ChevronRightIcon,
 } from "@chakra-ui/icons";
 import logo from "../../assets/HomePageIcon/WebsiteLogo.png";
 import { NavProduct } from "./Product";
@@ -263,12 +262,11 @@ const MobileNav: React.FC = () => {
 const MobileNavItem: React.FC<{
   label: string;
   href?: string;
-  children?: any;
-}> = ({ label, children, href }) => {
+}> = ({ label, href }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
+    <Stack spacing={4} onClick={onToggle}>
       <Box
         py={2}
         as="a"
@@ -285,7 +283,7 @@ const MobileNavItem: React.FC<{
         >
           {label}
         </Text>
-        {children && (
+        (
           <Icon
             as={ChevronDownIcon}
             transition={"all .25s ease-in-out"}
@@ -293,7 +291,7 @@ const MobileNavItem: React.FC<{
             w={6}
             h={6}
           />
-        )}
+        )
       </Box>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
@@ -305,7 +303,7 @@ const MobileNavItem: React.FC<{
           borderColor={useColorModeValue("gray.200", "gray.700")}
           align={"start"}
         >
-          {children && (
+           
             <Stack
               borderTop={"1px solid #EBECF0"}
               border={"white"}
@@ -316,7 +314,7 @@ const MobileNavItem: React.FC<{
               {label === "Solution" && <SolutionPage />}
               {label === "Resources" && <ResourcePage />}
             </Stack>
-          )}
+          
         </Stack>
       </Collapse>
     </Stack>
@@ -371,20 +369,20 @@ const NAV_ITEMS = [
   },
 ];
 
-interface LoginData {
-  email: string;
-  password: string;
-}
+// interface LoginData {
+//   email: string;
+//   password: string;
+// }
 
-interface SignupData {
-  email: string;
-  password: string;
-  username: string;
-  firstName: string;
-  lastName: string;
-  age: number;
-  organization: string;
-}
+// interface SignupData {
+//   email: string;
+//   password: string;
+//   username: string;
+//   firstName: string;
+//   lastName: string;
+//   age: number;
+//   organization: string;
+// }
 
 export const LoginPage: React.FC = () => {
   const [isLoginView, setIsLoginView] = useState(true);

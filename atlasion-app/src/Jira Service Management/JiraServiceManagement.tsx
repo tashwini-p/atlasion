@@ -28,8 +28,8 @@ import ITOperation3 from '../assets/JSM_ASSETS/ITOperations3.png'
 import CustomerService1 from '../assets/JSM_ASSETS/CustomerService1.png'
 import CustomerService3 from '../assets/JSM_ASSETS/CustomerService3.png'
 import "./JiraServiceManagement.css";
-import Footer from "../HomePage/Footer";
-import { Navbar } from "../HomePage/Navbar";
+import Footer from "../HomePage/Component/Footer";
+import { Navbar } from "../HomePage/Component/Navbar";
 
 const JiraServiceManagement: React.FC = () => {
   return (
