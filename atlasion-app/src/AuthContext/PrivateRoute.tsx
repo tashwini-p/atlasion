@@ -1,19 +1,19 @@
-import React, { ReactNode } from 'react';
-import { LoginPage } from '../HomePage/Component/Navbar';
+import { ReactNode, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from './Auth';
 
 interface PrivateRouteProps {
     children: ReactNode;
 }
 
-export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+export const PrivateRoute = ({ children}:PrivateRouteProps) => {
   const { isAuthenticated } = useAuth();
+  const navigate=useNavigate();
 
-  return (
-    isAuthenticated ? (
-      <>{children}</>
-    ) : (
-      <LoginPage />
-    )
-  );
+ useEffect(()=>{
+  if(!isAuthenticated){
+    return navigate("/logIn")
+  }
+ },[isAuthenticated])
+ return <>{children}</>
 };

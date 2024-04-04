@@ -15,8 +15,10 @@ import CountUp from 'react-countup';
 import PublicIcon from '@mui/icons-material/Public';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
+
 const DashHome = () => {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
+  
 
   return (
     <>

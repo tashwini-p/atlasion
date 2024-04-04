@@ -129,6 +129,15 @@
       "age": 28,
       "id": 13,
       "organization": "NVIDIA"
+    },
+    {
+      "email": "Admin123@example.com",
+      "password": "$2a$10$5JA6Cu8nuL.pDfIKudZBuurUv0D.129lkjScK.gMnqLfl0aalGMe2",
+      "username": "Admin",
+      "firstName": "AryanKumar",
+      "lastName": "Bhadhoriya",
+      "age": 28,
+      "id": 14
     }
   ]
 }
