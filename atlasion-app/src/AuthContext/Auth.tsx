@@ -18,7 +18,7 @@ interface UserDetails {
 
 interface AuthContextData {
     isAuthenticated: boolean;
-    login: (userDetails: UserDetails) => Promise<void>;
+    login: (userDetails: UserDetails) => void;
     handleLogout: () => void;
     userFullDetails:AuthorisedData
     setUserFullDetails:(details: AuthorisedData) => void;
@@ -49,21 +49,38 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }
   
   
-  const login = async (userData: UserDetails) => {
-    console.log(userData);
-    try {
-      const response = await axios.post('https://byte-adept-3456.onrender.com/login', userData);
-      const { token } = response.data;
-      if (token) {
-        console.log(token);
-        setIsAuthenticated(true);
-      } else {
-        throw new Error('Authentication failed');
-      }
-    } catch (error) {
-      throw new Error('Authentication failed');
-    }
-  };
+//   const login = async (userData: UserDetails) => {
+//     console.log(userData);
+//     try{
+//       const response = await axios.post('https://atlasion.onrender.com/login', userData);
+//       const { token } = response.data;
+//       if (token) {
+//         console.log(token);
+//         setIsAuthenticated(true);
+//       } 
+//       else {
+//         throw new Error('Authentication failed');
+//       }
+//     } catch (error) {
+//     console.log(error);
+//     //   console.log(error?.message);
+//     }
+//   };
+
+ const login=(userData:UserDetails)=>{
+    axios.post("https://atlasion.onrender.com/login", userData)
+    .then((res) => {
+        console.log(res.data)
+     setIsAuthenticated(true);
+      
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+ }
+        
+
 
   const handleLogout = () => {
     setIsAuthenticated(false);

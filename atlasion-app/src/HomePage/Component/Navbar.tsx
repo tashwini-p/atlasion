@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -194,7 +194,7 @@ const DesktopNav: React.FC = () => {
     <Stack direction={"row"} spacing={4} alignItems={"center"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
+          <Popover trigger={"hover"} placement={"auto-start"}>
             <PopoverTrigger>
               <Box
                 as="a"
@@ -212,7 +212,7 @@ const DesktopNav: React.FC = () => {
               </Box>
             </PopoverTrigger>
             {navItem.children && (
-              <PopoverContent border={"white"} mt={3.4} w={"100vw"}>
+              <PopoverContent border={"white"} mt={3.4} w={"99.2vw"} >
                 <Stack borderTop={"1px solid #EBECF0"}>
                   {navItem.label === "Products" && <NavProduct />}
                   {navItem.label === "Solution" && <SolutionPage />}
@@ -468,11 +468,11 @@ const LoginForm: React.FC = () => {
     email:"",
     password:"",
   }
-  const { login } = useAuth();
+  const { isAuthenticated,login } = useAuth();
 
  const[userData,setUserData]=useState<LoginData>(init);
 
- 
+ const navigate=useNavigate();
   
   const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
     let input=e.target;
@@ -481,15 +481,17 @@ const LoginForm: React.FC = () => {
     setUserData({...userData,[name]:value});
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     console.log(userData);
-    try {
-      await login(userData);
-      
-    } catch (error) {
-      console.log(error);
-    }
+      login(userData);
+
   };
+  useEffect(()=>{
+    if(isAuthenticated){
+       return navigate("/admin/dash-home")
+    }
+  },[isAuthenticated])
+
   return (
     <Stack spacing={4} w={"sm"} maxW={"sm"}>
       <FormControl id="email">
