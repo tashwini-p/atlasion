@@ -112,18 +112,16 @@ Password : Admin@123
 ```
 
 ## APIs Used
-If your application relies on external APIs, document them and include any necessary links or references.
+JSON Mock Server - https://atlasion.onrender.com/
 
 ## API Endpoints
 In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
-GET /api/items - retrieve all items
-POST /api/items - create a new item
-
+GET /users - list of all users
+POST /register - register new user
+POST /login - authentication of existing user
 
 ## Technology Stack
-List and provide a brief overview of the technologies used in the project.
-
-- Node.js
-- Express.js
-- MongoDB
-- Other libraries/modules
+- HTML
+- CSS
+- ReactJS
+- Typescript
