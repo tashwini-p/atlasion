@@ -49,30 +49,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }
   
   
-//   const login = async (userData: UserDetails) => {
-//     console.log(userData);
-//     try{
-//       const response = await axios.post('https://atlasion.onrender.com/login', userData);
-//       const { token } = response.data;
-//       if (token) {
-//         console.log(token);
-//         setIsAuthenticated(true);
-//       } 
-//       else {
-//         throw new Error('Authentication failed');
-//       }
-//     } catch (error) {
-//     console.log(error);
-//     //   console.log(error?.message);
-//     }
-//   };
+
 
  const login=(userData:UserDetails)=>{
     axios.post("https://atlasion.onrender.com/login", userData)
     .then((res) => {
         console.log(res.data)
      setIsAuthenticated(true);
-      
+     setUserFullDetails(res.data.user);
     })
     .catch((error) => {
       console.log(error);
