@@ -18,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import {useAppStore} from "../zustand/appStore"
 import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext/Auth';
 
 
 const AppBar = styled(MuiAppBar, {
@@ -67,6 +68,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const {isAuthenticated} =useAuth();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -93,10 +95,12 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
-  const handleHome=()=>{
-    navigate("/");
-  }
+  
+    const handleHome=()=>{
+      isAuthenticated&&navigate("/");
+    }
+  
+  
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (

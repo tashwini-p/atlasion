@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
   const HomePageReturn=()=>{
     navigate("/")
   }
-
+  
  console.log(userFullDetails);
   return (
     <>
@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
               fontSize={"sm"}
               fontWeight={600}
               cursor={"pointer"}
-              color={"white"}
+              color={"white"} 
               bg={"crimson"}
               _hover={{
                 bg: "red.600",
@@ -132,15 +132,18 @@ export const Navbar: React.FC = () => {
                 px={2}
                 py={1}
                 mx={9}
-                bg={"#0756CD"}
+                bg={"red"}
+                _hover={{
+                  bg: "red.600",
+                }}
                 color={"white"}
-                // _hover={"none"}
-                // _active={"none"}
+                //  _hover={{"none"}}
+                //  _active={"none"}
               >
                 <Text>{firstCharacterOfName}</Text>
               </MenuButton>
               <MenuList p={0}>
-                <Flex bg={"#172B4D"}>
+                <Flex bg={"blue.600"}>
                   <Avatar
                     mt={2}
                     ml={2}
