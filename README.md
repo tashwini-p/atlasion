@@ -7,7 +7,7 @@ Welcome to Atlassion! This project is a website built using ReactJS and Typescri
 Frontend 
 
 ## Deplolyed App
-Frontend: https://atlassion.netlify.app/ </br>
+Frontend: https://atlasian.netlify.app/ </br>
 Backend: https://atlasion.onrender.com/
 
 ## Directory Structure
