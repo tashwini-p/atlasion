@@ -125,7 +125,7 @@ export function NavProduct() {
               image_Url={
                 "https://tse1.mm.bing.net/th?id=OIP.SuVu6-ExuplFN6WLChTKhQAAAA&pid=Api&P=0&h=180"
               }
-              Product_name={"JTrello"}
+              Product_name={"Trello"}
               description={"Visual project management"}
             />
           </Grid>

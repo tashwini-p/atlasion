@@ -21,8 +21,7 @@ export default function AccordionDash() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Jira Software: Agile project management tool for efficient software development with issue tracking and collaboration.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -39,8 +38,7 @@ export default function AccordionDash() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+             Confluence: Atlassian's collaboration tool for creating, sharing, and collaborating on documents, plans, and ideas.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -57,8 +55,7 @@ export default function AccordionDash() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Atlas: Streamlining teamwork, goal tracking, and communication through centralized platform with efficient features.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -75,8 +72,7 @@ export default function AccordionDash() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Bitbucket: Atlassian's Git hosting service, offers collaboration, pull requests, and integration with development tools.
           </Typography>
         </AccordionDetails>
       </Accordion>
