@@ -18,14 +18,14 @@ const AllRoutes = () => {
           <ChakraProvider><Homepage/></ChakraProvider>
         } />
         <Route path="/jiraSoftware" element={
-            // <ChakraProvider> <Jira/></ChakraProvider>
-         <Jira/>
+            <ChakraProvider> <Jira/></ChakraProvider>
+     
         } />
         <Route path="/logIn" element={
           <ChakraProvider><LoginPage/></ChakraProvider>
         } />
         <Route path="/bitBucket" element={
-          <BitBucket/>
+           <ChakraProvider><BitBucket/></ChakraProvider>
         } />
         <Route path="/confluence" element={
             <ChakraProvider><Confluence/></ChakraProvider>
