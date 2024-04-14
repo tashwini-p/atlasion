@@ -49,8 +49,8 @@ const Footer = () => {
         </Flex>
       </Flex>
       <hr />
-      <Flex justifyContent="space-around" width="90%" mt={6} ml={["0rem","7rem"]} wrap={"wrap"}>
-        <Box flex={0.7}  display="flex" gap={4} fontWeight={500} fontSize={[7,14]} color="#4A5568" alignItems="center" flexWrap={"wrap"}>
+      <Flex  justifyContent="space-around" width="90%" mt={6} ml={["0rem","0rem"]} wrap={"wrap"}>
+        <Box flex={0.7} display="flex" gap={4} fontWeight={500} fontSize={[7,14]} color="#4A5568" alignItems="center" flexWrap={"wrap"}>
           <Flex gap={2} alignItems="center" >
             <ChakraImage src="https://img.icons8.com/ios/512/globe.png" height={15} width={15} />
             <Text>English</Text>
@@ -61,11 +61,11 @@ const Footer = () => {
           <Text>Impressum</Text>
           <Text>Copyright © 2022 Atlassian</Text>
         </Box>
-        <Flex flex={0.3} justifyContent={["start","flex-end"]} wrap={"wrap"}>
-          <ChakraImage src="https://img.icons8.com/fluency/512/facebook.png" height={[5,10]} width={[5,10]} mr={[1,3]}/>
-          <ChakraImage src="https://img.icons8.com/fluency/512/twitter.png" height={[5,10]} width={[5,10]} mr={[1,3]}/>
-          <ChakraImage src="https://img.icons8.com/fluency/512/linkedin.png" height={[5,10]} width={[5,10]}mr={[1,3]}/>
-          <ChakraImage src="https://img.icons8.com/ios-filled/512/youtube-squared.png" height={[5,10]} width={[5,10]} mr={[1,3]} />
+        <Flex alignItems={"center"} flex={0.3} justifyContent={["start","flex-end"]} wrap={"wrap"} >
+          <ChakraImage src="https://img.icons8.com/fluency/512/facebook.png" height={[5,6,9,10]} width={[5,6,9,10]} mr={[1,2,2,3]}/>
+          <ChakraImage src="https://img.icons8.com/fluency/512/twitter.png" height={[5,6,9,10]} width={[5,6,9,10]} mr={[1,2,2,3]}/>
+          <ChakraImage src="https://img.icons8.com/fluency/512/linkedin.png" height={[5,6,9,10]} width={[5,6,9,10]}mr={[1,2,2,3]}/>
+          <ChakraImage src="https://img.icons8.com/ios-filled/512/youtube-squared.png" height={[5,10]} width={[5,10]} mr={[1,2,2,3]} />
         </Flex>
       </Flex>
       </Container>
