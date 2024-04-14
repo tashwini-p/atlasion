@@ -6,8 +6,8 @@ Welcome to Atlassion! This project is a website built using ReactJS and Typescri
 ## Project Type
 Frontend 
 
-## Deplolyed App
-Frontend: https://atlasian.netlify.app/ </br>
+## Deployed App
+Frontend: https://atlasian-clone.netlify.app/ </br>
 Backend: https://atlasion.onrender.com/
 
 ## Directory Structure
@@ -41,16 +41,16 @@ Atlassion/
 [![VIDEO](https://img.youtube.com/vi/kzgs5bzcYe0/0.jpg)](https://www.youtube.com/watch?v=kzgs5bzcYe0)
 
 ## Features
-Key Features of Application
+Key Features of the Application
 - Detailed Information: Get in-depth insights into the capabilities and uses of Atlassian's software products.
-- User Authentication: We've implemented user authentication using json-server-auth, allowing users to securely log in and access restricted content.
-- Admin Dashboard: Utilizing json-server-auth, we've incorporated an admin dashboard feature that enables authorized users to manage site content effortlessly.
+- User Authentication: We've implemented user authentication using JSON-server-auth, allowing users to securely log in and access restricted content.
+- Admin Dashboard: Utilizing JSON-server-auth, we've incorporated an admin dashboard feature that enables authorized users to manage site content effortlessly.
 
 ## Installation & Getting started
 Detailed instructions on how to install, configure, and get the project running: </br>
 Step 1: Clone the repository on terminal </br>
 Step 2: Move to the atlasion-app folder </br>
-Step 3: Install dependecies with the comman ``` npm install``` </br>
+Step 3: Install dependencies with the command ``` npm install``` </br>
 Step 4: After the node modules have been installed, to start the app, run the command ``` npm run dev``` </br>
 
 ```bash
