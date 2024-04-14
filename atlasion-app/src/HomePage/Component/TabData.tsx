@@ -5,6 +5,7 @@ import {
     Text,
     Box,
     Img,
+    Grid
   } from '@chakra-ui/react'
   // 
   import React from 'react'
@@ -14,7 +15,7 @@ import {
   import tab_3_image from "../../assets/HomePageIcon/mid_tab3_image.png"
   import jira_Product_discovered_logo from "../../assets/HomePageIcon/Jira-Product-Discovery_logo-mark.png"
 import { Link } from 'react-router-dom';
-  
+
   
   interface FeatureProp{
       Product_name: string;
@@ -34,8 +35,8 @@ import { Link } from 'react-router-dom';
              <Box  h={"3rem"} w={"3rem"} display={"flex"} alignItems={"center"} justifyContent={"center"}>
                <Img h={["2rem","2.8rem"]} w={["2rem","2.8rem"]}  src={imageUrl} />
              </Box>
-             <Box fontSize={["0.5rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
-              <Text fontSize={["0.6rem","1.2rem"]} p={0} pr={["0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
+             <Box fontSize={["0.5rem","0.7rem","0.9rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
+              <Text fontSize={["0.6rem","0.7rem","0.9rem","1.2rem"]} p={0} pr={["0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
               <Text  pr={"0.3rem"} >{description}</Text>
              </Box>
           </Flex>
@@ -46,15 +47,15 @@ import { Link } from 'react-router-dom';
   
   export const Top_Data:React.FC<Top_Data_Props>=({Product_title,description})=>{
       return(
-          <Flex mt={[1,4]} flexDirection={"column"} rowGap={[4,7]}>
-          <Box px={1} color={"#091e42"} fontWeight={500} fontSize={["0.9rem","1.21rem"]}>{Product_title}
+          <Flex mt={[1,2,3,4]} flexDirection={"column"} rowGap={[2,3,5,7]}  w={"100%"}>
+          <Box  px={1} color={"#091e42"} fontWeight={500} fontSize={["0.9rem","1rem","1.1rem","1.21rem"]}>{Product_title}
           </Box>
           <Flex  alignItems={"center"}  color="#2a6ed4" fontWeight="medium" _hover={{ transform: 'translateX(1px)', transition: 'ease-in-out 300ms'}} >
-              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.5rem","1rem"]}>
+              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.7rem","0.8rem","0.9rem","1rem"]}>
                 {description}
               </Text>
               <Flex h={"1rem"} alignItems={"center"}  justifyContent={"center"}>
-              <ChevronRightIcon mt={[0,1]}   />
+              <ChevronRightIcon mt={[0,1]} />
               </Flex>
             </Flex>
             </Flex> 
@@ -63,14 +64,14 @@ import { Link } from 'react-router-dom';
   
   export default function SplitWithImage() {
     return (
-      <Container  maxW={'6xl'}>
-      <Flex >
-       <Box w={["50%","30%"]}  color={"black"} >
+      <Container  maxW={'6xl'} >
+      <Flex flexDirection={["column","row","row","row"]} rowGap={"1rem"}>
+       <Box w={["100%","60%","40%","30%"]}  color={"black"} >
          <Top_Data
            Product_title={"Make work flow across teams while connecting back to company goals"}
            description={"Work differently,together"} 
            />
-          <Flex mt={7} flexDirection={"column"} rowGap={5}>
+          <Grid mt={7} flexDirection={"column"}  rowGap={5} gridTemplateColumns={["repeat(2,1fr)","repeat(1,1fr)","repeat(1,1fr)","repeat(1,1fr)"]}>
           <Link to={"/jiraSoftware"}>
             <Feature
              Product_name={"Jira Software"}
@@ -99,9 +100,9 @@ import { Link } from 'react-router-dom';
              imageUrl={"https://attlasianmegamenuclone.vercel.app/logos-atlas-icon-gradient-blue.svg"}
              />
            </Link>
-           </Flex>
+           </Grid>
           </Box>
-          <Flex w={["70%","70%"]} >
+          <Flex w={["100%","70%"]}>
             <Image
               rounded={'md'}
               alt={'feature image'}
@@ -119,12 +120,12 @@ import { Link } from 'react-router-dom';
   export const Feature_1:React.FC<FeatureProp> = ({Product_name,description,imageUrl} ) => {
       return (
           <>
-          <Flex  color={"black"} p={1} h={["3rem","4rem"]} _hover={{transform:"translate(1px)" , transition:"ease-in out 300ms"}} columnGap={[1,2]} alignItems={"center"}>
+          <Flex  color={"black"} p={1} h={["3rem","4rem"]} _hover={{transform:"translate(1px)" , transition:"ease-in out 300ms"}} columnGap={[1,2]} alignItems={"center"} >
              <Box  h={"3rem"} w={"3rem"} display={"flex"} alignItems={"center"} justifyContent={"center"}>
                <Img h={["1.5rem","2.8rem"]} w={["1.5rem","2.8rem"]}  src={imageUrl} />
              </Box>
-             <Box fontSize={["0.3rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
-              <Text fontSize={["0.5rem","1.2rem"]} p={0} pr={["0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
+             <Box fontSize={["0.5rem","0.7rem","0.9rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
+              <Text fontSize={["0.6rem","0.7rem","0.9rem","1.2rem"]} p={0} pr={["0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
               <Text  pr={"0.3rem"} >{description}</Text>
              </Box>
           </Flex>
@@ -133,11 +134,11 @@ import { Link } from 'react-router-dom';
     }
     export const Top_Data_1:React.FC<Top_Data_Props>=({Product_title,description})=>{
       return(
-          <Flex mt={[1,4]} flexDirection={"column"} rowGap={[4,7]}>
-          <Box px={1} color={"#091e42"} fontWeight={500} fontSize={["0.6rem","1.21rem"]}>{Product_title}
+          <Flex  mt={[1,2,3,4]} flexDirection={"column"} rowGap={[2,3,5,7]}>
+          <Box px={1} color={"#091e42"} fontWeight={500} fontSize={["0.9rem","1rem","1.1rem","1.21rem"]}>{Product_title}
           </Box>
           <Flex  alignItems={"center"}  color="#2a6ed4" fontWeight="medium" _hover={{ transform: 'translateX(1px)', transition: 'ease-in-out 300ms'}} >
-              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.5rem","1rem"]}>
+              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.7rem","0.8rem","0.9rem","1rem"]}>
                 {description}
               </Text>
               <Flex h={"1rem"} alignItems={"center"}  justifyContent={"center"}>
@@ -150,8 +151,8 @@ import { Link } from 'react-router-dom';
   export const Jira_service_management=()=>{
       return(
           <Container  maxW={'6xl'}>
-               <Flex >
-               <Box w={["50%","30%"]}   color={"black"} >
+               <Flex flexDirection={["column","row","row","row"]} rowGap={"1rem"}>
+               <Box w={["100%","60%","40%","30%"]}    color={"black"} >
                   <Flex flexDirection={"column"} rowGap={[3,8]}>
                    <Top_Data_1
                        Product_title={"Enable your dev, IT ops, and business teams to deliver great service experiences"}
@@ -166,7 +167,7 @@ import { Link } from 'react-router-dom';
                      </Link>
                      </Flex>
                </Box>
-               <Flex w={["70%","70%"]} >
+               <Flex w={["100%","70%"]} >
                   <Image
                       rounded={'md'}
                       alt={'feature image'}
@@ -187,8 +188,8 @@ import { Link } from 'react-router-dom';
              <Box  h={["2rem","3rem"]} w={["2rem","3rem"]} display={"flex"} alignItems={"center"} justifyContent={"center"}>
                <Img h={["1.5rem","2.8rem"]} w={["1.5rem","2.8rem"]}  src={imageUrl} />
              </Box>
-             <Box fontSize={["0.4rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
-              <Text fontSize={["0.6rem","1.2rem"]} p={0} pr={["0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
+             <Box fontSize={["0.5rem","0.7rem","0.9rem","1rem"]} fontWeight={"bold"} color={"gray.500"} display={"flex"} flexDirection={"column"} justifyContent={"center"} >
+              <Text fontSize={["0.6rem","0.7rem","0.9rem","1.2rem"]} p={0} pr={["0.1rem","","0.1rem","0.3rem"]} color={"black"} _hover={{color:"#2a6ed9"}}>{Product_name}</Text>
               <Text  pr={["0.1rem","0.3rem"]} >{description}</Text>
              </Box>
           </Flex>
@@ -198,15 +199,15 @@ import { Link } from 'react-router-dom';
   
     export const Top_Data_2:React.FC<Top_Data_Props>=({Product_title,description})=>{
       return(
-          <Flex mt={[1,4]} flexDirection={"column"} rowGap={[4,7]}>
-          <Box px={1} color={"#091e42"} fontWeight={500} fontSize={["0.7rem","1.21rem"]}>{Product_title}
+          <Flex mt={[1,2,3,4]} flexDirection={"column"} rowGap={[2,3,5,7]}>
+          <Box px={1} color={"#091e42"} fontWeight={500} fontSize={["0.9rem","1rem","1.1rem","1.21rem"]}>{Product_title}
           </Box>
           <Flex  alignItems={"center"}  color="#2a6ed4" fontWeight="medium" _hover={{ transform: 'translateX(1px)', transition: 'ease-in-out 300ms'}} >
-              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.5rem","1rem"]}>
+              <Text textAlign="center" px="1" flexWrap="nowrap" _hover={{ color: '#2a6ed4' }} fontSize={["0.7rem","0.8rem","0.9rem","1rem"]}>
                 {description}
               </Text>
               <Flex h={"1rem"} alignItems={"center"}  justifyContent={"center"}>
-              <ChevronRightIcon mt={[0,1]}   />
+              <ChevronRightIcon mt={[0,1]}/>
               </Flex>
             </Flex>
             </Flex> 
@@ -216,13 +217,13 @@ import { Link } from 'react-router-dom';
   export const AgileAndDevOps=()=>{
       return(
           <Container  maxW={'6xl'}>
-      <Flex >
-       <Box w={["50%","30%"]}  color={"black"} >
+      <Flex flexDirection={["column","row","row","row"]} rowGap={"1rem"} >
+       <Box w={["100%","60%","40%","30%"]}  color={"black"} >
          <Top_Data_2
            Product_title={"Run a world-class agile software company—from discovery to delivery and operations"}
            description={"Explore Open DevOps"} 
            />
-          <Flex mt={7} flexDirection={"column"} rowGap={5}>
+          <Grid mt={7} flexDirection={"column"}  rowGap={5} gridTemplateColumns={["repeat(2,1fr)","repeat(1,1fr)","repeat(1,1fr)","repeat(1,1fr)"]}>
           <Link to={"/jiraSoftware"}>
             <Feature_2
              Product_name={"Jira Software"}
@@ -252,9 +253,9 @@ import { Link } from 'react-router-dom';
              imageUrl={"https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/44_Bitbucket_logo_logos-512.png"}
              />
            </Link>
-           </Flex>
+           </Grid>
           </Box>
-          <Flex w={["50%","70%"]}  >
+          <Flex w={["100%","70%"]}  >
             <Image
               rounded={'md'}
               alt={'feature image'}

@@ -39,6 +39,8 @@ import { useAuth } from "../../AuthContext/Auth";
 import {  useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+
 export const Navbar: React.FC = () => {
   const { handleLogout, userFullDetails} = useAuth();
   const { isOpen, onToggle } = useDisclosure();
@@ -53,11 +55,10 @@ export const Navbar: React.FC = () => {
     handleLogout();
   }
 
-
   const HomePageReturn=()=>{
     navigate("/")
   }
-  
+
  console.log(userFullDetails);
   return (
     <>
@@ -94,7 +95,6 @@ export const Navbar: React.FC = () => {
               />
             </Flex>
             <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-             
               <Img
                 onClick={HomePageReturn}
                 src={logo}
@@ -103,7 +103,6 @@ export const Navbar: React.FC = () => {
                 w={["5rem", "10rem"]}
                 ml={[5, 9]}
               />
-              
               <Flex display={{ base: "none", md: "flex" }} ml={10}>
                 <DesktopNav />
               </Flex>
@@ -273,15 +272,14 @@ const DesktopNav: React.FC = () => {
 // };
 
 const MobileNav: React.FC = () => {
+
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
+    <Stack bg={useColorModeValue("white", "gray.800")} p={4} display={{ md: "none" }}>
+      <Box>
+        {NAV_ITEMS.map((navItem) => (
+          <MobileNavItem key={navItem.label} {...navItem} />
+        ))}
+      </Box>
     </Stack>
   );
 };
@@ -293,7 +291,7 @@ const MobileNavItem: React.FC<{
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Stack spacing={4} onClick={onToggle}>
+    <Stack spacing={0} onClick={onToggle}>
       <Box
         py={2}
         as="a"
@@ -308,17 +306,14 @@ const MobileNavItem: React.FC<{
           fontWeight={600}
           color={useColorModeValue("gray.600", "gray.200")}
         >
-          {label}
-        </Text>
-        (
-          <Icon
+          {label} <Icon
             as={ChevronDownIcon}
             transition={"all .25s ease-in-out"}
             transform={isOpen ? "rotate(180deg)" : ""}
             w={6}
             h={6}
           />
-        )
+        </Text>
       </Box>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>

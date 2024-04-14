@@ -187,7 +187,7 @@ export function NavProduct() {
           </Flex>
         </Flex>
       </Box>
-      <Box minW="35%" pl="2.5rem" pt={["1rem","3rem"]} bg="#F3F4F6">
+      <Box minW="35%" pl="2.5rem" pt={["1rem","3rem"]} bg="#F3F4F6" display={["none","block"]}>
         <Box>
           <Text fontSize="11px" fontWeight="bold" color="#54637c">
             WHAT'S NEW
